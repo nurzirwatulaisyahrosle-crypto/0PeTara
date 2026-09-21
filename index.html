@@ -17,8 +17,7 @@
     <title>Kembara PeTara</title>
 
     <!-- CSS utama -->
- <link rel="stylesheet" href="style.css">
-    >
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -54,8 +53,6 @@
 
 <section id="start-screen" class="screen active">
 
-    <!-- Background decoration -->
-
     <div class="start-background">
 
         <div class="cloud cloud-1"></div>
@@ -66,8 +63,6 @@
 
     </div>
 
-
-    <!-- Main start panel -->
 
     <div class="start-panel">
 
@@ -89,7 +84,7 @@
         </div>
 
 
-        <!-- Player name -->
+        <!-- PLAYER NAME -->
 
         <div class="name-section">
 
@@ -115,7 +110,7 @@
         </div>
 
 
-        <!-- Avatar selection -->
+        <!-- AVATAR -->
 
         <div class="avatar-section">
 
@@ -162,8 +157,6 @@
         </div>
 
 
-        <!-- Start button -->
-
         <button
             id="start-button"
             class="primary-button"
@@ -189,9 +182,7 @@
 
 <section id="game-screen" class="screen hidden">
 
-    <!-- =================================================
-         HUD
-    ================================================= -->
+    <!-- HUD -->
 
     <header id="game-hud">
 
@@ -269,14 +260,10 @@
 
     <main id="game-viewport">
 
-        <!-- World is larger than screen -->
-
         <div id="game-world">
 
 
-            <!-- =========================================
-                 START AREA
-            ========================================== -->
+            <!-- START AREA -->
 
             <div
                 class="world-zone start-zone"
@@ -291,9 +278,7 @@
 
 
 
-            <!-- =========================================
-                 CONTROL SIGN
-            ========================================== -->
+            <!-- CONTROL SIGN -->
 
             <div
                 id="control-sign"
@@ -317,9 +302,7 @@
 
 
 
-            <!-- =========================================
-                 NPC - PENJAGA PETARA
-            ========================================== -->
+            <!-- PENJAGA PETARA -->
 
             <div
                 id="guide-npc"
@@ -338,9 +321,7 @@
 
 
 
-            <!-- =========================================
-                 CHECKPOINT 1
-            ========================================== -->
+            <!-- CHECKPOINT 1 -->
 
             <div
                 id="checkpoint-1"
@@ -362,9 +343,7 @@
 
 
 
-            <!-- =========================================
-                 CHECKPOINT 2 - HOUSE
-            ========================================== -->
+            <!-- CHECKPOINT 2 -->
 
             <div
                 id="checkpoint-2"
@@ -388,9 +367,7 @@
 
 
 
-            <!-- =========================================
-                 CHECKPOINT 3 - BRIDGE
-            ========================================== -->
+            <!-- CHECKPOINT 3 -->
 
             <div
                 id="checkpoint-3"
@@ -414,9 +391,7 @@
 
 
 
-            <!-- =========================================
-                 CHECKPOINT 4 - SHOP
-            ========================================== -->
+            <!-- CHECKPOINT 4 -->
 
             <div
                 id="checkpoint-4"
@@ -440,9 +415,7 @@
 
 
 
-            <!-- =========================================
-                 CHECKPOINT 5 - GATE
-            ========================================== -->
+            <!-- CHECKPOINT 5 -->
 
             <div
                 id="checkpoint-5"
@@ -470,9 +443,7 @@
 
 
 
-            <!-- =========================================
-                 PLAYER
-            ========================================== -->
+            <!-- PLAYER -->
 
             <div id="player">
 
@@ -499,9 +470,7 @@
 
 
 
-    <!-- =================================================
-         CHECKPOINT INTERACTION
-    ================================================= -->
+    <!-- CHECKPOINT INTERACTION -->
 
     <div
         id="interaction-prompt"
@@ -534,9 +503,7 @@
 
 
 
-    <!-- =================================================
-         MOBILE D-PAD
-    ================================================= -->
+    <!-- MOBILE D-PAD -->
 
     <div
         id="mobile-controls"
@@ -579,7 +546,6 @@
         </button>
 
     </div>
-
 
 </section>
 
@@ -631,8 +597,6 @@
 
         </div>
 
-
-        <!-- Checkpoint content inserted by JS -->
 
         <div id="mission-content"></div>
 
@@ -714,6 +678,7 @@
             Saya sedang mendengar...
         </h2>
 
+
         <div class="voice-wave">
 
             <span></span>
@@ -729,7 +694,34 @@
         <div
             id="live-transcript"
             class="live-transcript"
-        ></div>
+        >
+            Mulakan bercakap...
+        </div>
+
+
+        <!-- =============================================
+             STOP RECORDING BUTTON
+        ============================================== -->
+
+        <button
+            id="stop-recording-button"
+            type="button"
+            onclick="stopListening()"
+            style="
+                margin-top: 22px;
+                padding: 14px 26px;
+                border: none;
+                border-radius: 12px;
+                background: #ef5350;
+                color: #ffffff;
+                font-size: 16px;
+                font-weight: 900;
+                cursor: pointer;
+                box-shadow: 0 5px 0 #b83232;
+            "
+        >
+            ⏹ BERHENTI RAKAM
+        </button>
 
     </div>
 
@@ -833,6 +825,10 @@
 <script src="audio.js"></script>
 <script src="checkpoints.js"></script>
 <script src="game.js"></script>
+
+
+</body>
+</html>
 
 
 </body>
