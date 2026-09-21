@@ -2418,3 +2418,547 @@ button {
     }
 
 }
+/* =========================================================
+   40. PETARA PIXEL WORLD REDESIGN
+   Aset visual baharu untuk dunia Kembara PeTara
+========================================================= */
+
+#game-viewport {
+    background: #63b94b;
+}
+
+#game-world {
+    width: 2200px;
+    height: 1600px;
+
+    background-color: #70c857;
+    background-image:
+        radial-gradient(circle at 18px 18px, rgba(255,255,255,0.10) 2px, transparent 3px),
+        radial-gradient(circle at 68px 54px, rgba(34,116,42,0.15) 3px, transparent 4px);
+    background-size: 82px 82px, 115px 115px;
+
+    image-rendering: pixelated;
+}
+
+/* Laluan utama */
+#game-world::before {
+    width: 190px;
+    height: 1390px;
+    left: 1005px;
+    top: 105px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a96f3d 0%,
+            #c58a4e 12%,
+            #d8a765 50%,
+            #c58a4e 88%,
+            #a96f3d 100%
+        );
+
+    border-left: 8px solid rgba(93, 58, 29, 0.22);
+    border-right: 8px solid rgba(93, 58, 29, 0.22);
+    border-radius: 24px;
+    z-index: 1;
+}
+
+/* Laluan kiri-kanan */
+#game-world::after {
+    width: 1180px;
+    height: 170px;
+    left: 510px;
+    top: 700px;
+
+    background:
+        linear-gradient(
+            #a96f3d 0%,
+            #c58a4e 12%,
+            #d8a765 50%,
+            #c58a4e 88%,
+            #a96f3d 100%
+        );
+
+    border-top: 8px solid rgba(93, 58, 29, 0.22);
+    border-bottom: 8px solid rgba(93, 58, 29, 0.22);
+    border-radius: 24px;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   SUNGAI
+========================================================= */
+
+.petara-river {
+    position: absolute;
+
+    left: 0;
+    top: 455px;
+
+    width: 2200px;
+    height: 230px;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            180deg,
+            #58d4ef 0%,
+            #27add8 18%,
+            #168ec7 55%,
+            #2ab0da 82%,
+            #66d9ef 100%
+        );
+
+    border-top: 12px solid rgba(218, 242, 160, 0.8);
+    border-bottom: 12px solid rgba(218, 242, 160, 0.8);
+
+    box-shadow:
+        inset 0 14px 0 rgba(255,255,255,0.13),
+        inset 0 -14px 0 rgba(13,92,147,0.15);
+}
+
+.petara-river::before,
+.petara-river::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+    height: 18px;
+
+    opacity: 0.38;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 55px,
+            rgba(255,255,255,0.8) 55px 95px,
+            transparent 95px 150px
+        );
+}
+
+.petara-river::before {
+    top: 55px;
+}
+
+.petara-river::after {
+    bottom: 45px;
+}
+
+
+/* =========================================================
+   HIASAN MAP
+========================================================= */
+
+.map-decoration {
+    position: absolute;
+    display: block;
+
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+
+    image-rendering: pixelated;
+
+    z-index: 4;
+
+    filter: drop-shadow(0 7px 3px rgba(25, 70, 30, 0.22));
+}
+
+.tree {
+    width: 175px;
+    height: 205px;
+}
+
+.tree-a { left: 70px; top: 80px; }
+.tree-b { left: 250px; top: 125px; }
+.tree-c { left: 455px; top: 70px; }
+.tree-d { left: 1720px; top: 80px; }
+.tree-e { left: 1910px; top: 150px; }
+
+.tree-f { left: 80px; top: 920px; }
+.tree-g { left: 270px; top: 1120px; }
+.tree-h { left: 1770px; top: 1020px; }
+.tree-i { left: 1950px; top: 1220px; }
+.tree-j { left: 1600px; top: 1320px; }
+
+.rock {
+    width: 82px;
+    height: 72px;
+}
+
+.rock-a { left: 690px; top: 1040px; }
+.rock-b { left: 1450px; top: 1120px; }
+.rock-c { left: 1830px; top: 360px; }
+
+.bush {
+    width: 105px;
+    height: 82px;
+}
+
+.bush-a { left: 580px; top: 1180px; }
+.bush-b { left: 1510px; top: 1220px; }
+
+.flowers {
+    width: 78px;
+    height: 70px;
+}
+
+.flowers-a { left: 820px; top: 930px; }
+.flowers-b { left: 1340px; top: 940px; }
+.flowers-c { left: 390px; top: 930px; }
+
+.log-decoration {
+    width: 125px;
+    height: 90px;
+    left: 170px;
+    top: 760px;
+}
+
+.stump-decoration {
+    width: 82px;
+    height: 75px;
+    left: 1880px;
+    top: 870px;
+}
+
+.lamp {
+    width: 72px;
+    height: 105px;
+    z-index: 7;
+}
+
+.lamp-a {
+    left: 930px;
+    top: 910px;
+}
+
+.lamp-b {
+    left: 1220px;
+    top: 910px;
+}
+
+
+/* =========================================================
+   KAWASAN PERMULAAN
+========================================================= */
+
+.start-zone {
+    left: 850px;
+    top: 1235px;
+
+    width: 500px;
+    height: 285px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(168, 238, 111, 0.78) 0%,
+            rgba(116, 204, 83, 0.34) 58%,
+            transparent 73%
+        );
+
+    z-index: 2;
+}
+
+.zone-label {
+    bottom: 15px;
+
+    color: rgba(29, 92, 38, 0.62);
+
+    font-size: 18px;
+    text-shadow: 0 2px rgba(255,255,255,0.35);
+}
+
+
+/* =========================================================
+   PAPAN ARAH
+========================================================= */
+
+#control-sign.petara-direction-sign {
+    left: 760px;
+    top: 1270px;
+
+    width: 155px;
+    height: 150px;
+
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+
+    object-fit: contain;
+    image-rendering: pixelated;
+
+    filter: drop-shadow(0 8px 3px rgba(0,0,0,0.20));
+}
+
+#control-sign.petara-direction-sign::after {
+    display: none;
+}
+
+
+/* =========================================================
+   PENJAGA PETARA
+========================================================= */
+
+#guide-npc {
+    left: 1240px;
+    top: 1230px;
+
+    width: 115px;
+
+    z-index: 15;
+}
+
+.npc-pixel-sprite {
+    display: block;
+
+    width: 100px;
+    height: 115px;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    filter: drop-shadow(0 7px 3px rgba(0,0,0,0.20));
+}
+
+.npc-name {
+    position: relative;
+    z-index: 2;
+
+    width: max-content;
+    max-width: 150px;
+
+    margin: 0 auto 4px;
+
+    background: rgba(10, 29, 45, 0.90);
+}
+
+
+/* =========================================================
+   CHECKPOINT BARU
+========================================================= */
+
+.checkpoint {
+    width: 170px;
+    min-width: 170px;
+
+    z-index: 12;
+}
+
+.checkpoint-image {
+    display: block;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    filter: drop-shadow(0 9px 4px rgba(0,0,0,0.22));
+
+    pointer-events: none;
+}
+
+.checkpoint-flag-image {
+    width: 110px;
+    height: 110px;
+}
+
+.building-image {
+    width: 245px;
+    height: 190px;
+
+    max-width: none;
+
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.bridge-image {
+    width: 260px;
+    height: 155px;
+
+    max-width: none;
+
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.gate-image {
+    width: 260px;
+    height: 210px;
+
+    max-width: none;
+
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.checkpoint-label {
+    position: relative;
+
+    z-index: 8;
+
+    margin-top: 3px;
+
+    padding: 7px 11px;
+
+    background: rgba(10, 31, 48, 0.92);
+
+    border: 3px solid rgba(255,255,255,0.92);
+
+    box-shadow: 0 4px 0 rgba(0,0,0,0.20);
+
+    font-size: 11px;
+}
+
+.checkpoint-lock {
+    top: -22px;
+
+    z-index: 20;
+
+    border: 2px solid rgba(255,255,255,0.72);
+
+    box-shadow: 0 3px 0 rgba(0,0,0,0.20);
+}
+
+/* Posisi misi */
+#checkpoint-1 {
+    left: 1015px;
+    top: 1030px;
+}
+
+#checkpoint-2 {
+    left: 500px;
+    top: 690px;
+}
+
+#checkpoint-3 {
+    left: 1015px;
+    top: 495px;
+
+    z-index: 14;
+}
+
+#checkpoint-4 {
+    left: 1540px;
+    top: 680px;
+}
+
+#checkpoint-5 {
+    left: 1015px;
+    top: 115px;
+}
+
+
+/* =========================================================
+   PLAYER PIXEL
+========================================================= */
+
+#player {
+    left: 1080px;
+    top: 1370px;
+
+    width: 64px;
+    height: 82px;
+
+    z-index: 50;
+}
+
+#player-sprite.pixel-player {
+    display: block;
+
+    width: 64px;
+    height: 72px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    filter: drop-shadow(0 6px 2px rgba(0,0,0,0.22));
+}
+
+#player.walking #player-sprite.pixel-player {
+    animation: pixelPlayerWalk 0.28s ease-in-out infinite alternate;
+}
+
+@keyframes pixelPlayerWalk {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* =========================================================
+   HUD - SENTUHAN PIXEL RPG
+========================================================= */
+
+#game-hud {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(19, 46, 65, 0.96),
+            rgba(9, 29, 46, 0.97)
+        );
+
+    border-color: #f7e5a3;
+
+    box-shadow:
+        0 6px 0 rgba(5, 22, 32, 0.48),
+        0 12px 28px rgba(0,0,0,0.18);
+}
+
+.hud-score {
+    background: #31566d;
+    border: 2px solid rgba(255,255,255,0.14);
+}
+
+
+/* =========================================================
+   RESPONSIVE PIXEL ASSETS
+========================================================= */
+
+@media (max-height: 650px) {
+
+    .tree {
+        width: 160px;
+        height: 188px;
+    }
+
+    .building-image {
+        width: 225px;
+        height: 175px;
+    }
+
+    .gate-image {
+        width: 235px;
+        height: 190px;
+    }
+
+}
+
+@media (hover: none), (pointer: coarse) {
+
+    #control-sign.petara-direction-sign {
+        width: 145px;
+        height: 140px;
+    }
+
+    .checkpoint-label {
+        font-size: 12px;
+    }
+
+}
