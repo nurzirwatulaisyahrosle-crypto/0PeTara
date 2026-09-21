@@ -2961,4 +2961,814 @@ button {
         font-size: 12px;
     }
 
+
+/* =========================================================
+   KEMBARA PETARA
+   REDESIGN MAP RPG PIXEL
+   ========================================================= */
+
+
+/* =========================
+   DUNIA UTAMA
+========================= */
+
+#game-world {
+    width: 2200px;
+    height: 1600px;
+
+    background:
+        radial-gradient(
+            circle at 20px 25px,
+            rgba(255,255,255,0.08) 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 80px 70px,
+            rgba(25,110,45,0.10) 3px,
+            transparent 4px
+        ),
+        #67c94f;
+
+    background-size:
+        90px 90px,
+        120px 120px;
+
+    overflow: hidden;
+
+    image-rendering: pixelated;
+}
+
+
+/* =========================
+   JALAN UTAMA MENEGAK
+========================= */
+
+#game-world::before {
+    content: "";
+
+    position: absolute;
+
+    left: 980px;
+    top: 0;
+
+    width: 240px;
+    height: 1600px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c98d4c 0%,
+            #e8b76e 15%,
+            #edc47d 50%,
+            #e8b76e 85%,
+            #c98d4c 100%
+        );
+
+    border-left: 8px solid rgba(111,72,31,0.16);
+    border-right: 8px solid rgba(111,72,31,0.16);
+
+    z-index: 1;
+}
+
+
+/* =========================
+   JALAN MELINTANG
+========================= */
+
+#game-world::after {
+    content: "";
+
+    position: absolute;
+
+    left: 300px;
+    top: 720px;
+
+    width: 1600px;
+    height: 190px;
+
+    background:
+        linear-gradient(
+            #c98d4c 0%,
+            #e7b56c 18%,
+            #edc47d 50%,
+            #e7b56c 82%,
+            #c98d4c 100%
+        );
+
+    border-top: 8px solid rgba(111,72,31,0.16);
+    border-bottom: 8px solid rgba(111,72,31,0.16);
+
+    z-index: 1;
+}
+
+
+/* =========================
+   SUNGAI PETARA
+========================= */
+
+.petara-river {
+    position: absolute;
+
+    left: 0;
+    top: 400px;
+
+    width: 2200px;
+    height: 245px;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #35bde8 0px,
+            #35bde8 24px,
+            #55d3f1 25px,
+            #55d3f1 29px,
+            #269dd7 30px,
+            #269dd7 54px
+        );
+
+    border-top: 12px solid #26926b;
+    border-bottom: 12px solid #26926b;
+
+    box-shadow:
+        inset 0 15px 0 rgba(255,255,255,0.10),
+        inset 0 -15px 0 rgba(0,87,145,0.16);
+
+    z-index: 2;
+}
+
+
+/* air berkilau */
+
+.petara-river::before,
+.petara-river::after {
+    content: "";
+
+    position: absolute;
+
+    height: 5px;
+
+    background: rgba(255,255,255,0.42);
+
+    border-radius: 10px;
+}
+
+.petara-river::before {
+    width: 130px;
+
+    left: 300px;
+    top: 60px;
+
+    box-shadow:
+        350px 95px rgba(255,255,255,0.35),
+        950px 20px rgba(255,255,255,0.35),
+        1450px 115px rgba(255,255,255,0.35);
+}
+
+.petara-river::after {
+    width: 80px;
+
+    left: 100px;
+    top: 160px;
+
+    box-shadow:
+        520px -115px rgba(255,255,255,0.30),
+        1250px -40px rgba(255,255,255,0.30),
+        1750px -110px rgba(255,255,255,0.30);
+}
+
+
+/* =========================
+   START ZONE
+========================= */
+
+.start-zone {
+    left: 930px;
+    top: 1260px;
+
+    width: 340px;
+    height: 270px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,226,86,0.16),
+            rgba(102,201,79,0.06) 55%,
+            transparent 75%
+        );
+
+    z-index: 0;
+}
+
+.start-zone .zone-label {
+    display: none;
+}
+
+
+/* =========================
+   SEMUA GAMBAR MAP
+========================= */
+
+.map-decoration {
+    position: absolute;
+
+    object-fit: contain;
+
+    pointer-events: none;
+    user-select: none;
+
+    image-rendering: pixelated;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(0 5px 2px rgba(0,0,0,0.18));
+}
+
+
+/* =========================
+   POKOK
+========================= */
+
+.map-decoration.tree {
+    width: 150px;
+    height: 170px;
+}
+
+
+/* kiri atas */
+
+.tree-a {
+    left: 80px;
+    top: 80px;
+}
+
+.tree-b {
+    left: 250px;
+    top: 180px;
+}
+
+.tree-c {
+    left: 470px;
+    top: 50px;
+}
+
+
+/* kanan atas */
+
+.tree-d {
+    left: 1670px;
+    top: 80px;
+}
+
+.tree-e {
+    left: 1910px;
+    top: 180px;
+}
+
+
+/* kiri bawah */
+
+.tree-f {
+    left: 90px;
+    top: 1030px;
+}
+
+.tree-g {
+    left: 310px;
+    top: 1250px;
+}
+
+
+/* kanan bawah */
+
+.tree-h {
+    left: 1760px;
+    top: 1050px;
+}
+
+.tree-i {
+    left: 1960px;
+    top: 1280px;
+}
+
+
+/* tambahan */
+
+.tree-j {
+    left: 1540px;
+    top: 1180px;
+}
+
+
+/* =========================
+   BATU
+========================= */
+
+.map-decoration.rock {
+    width: 90px;
+    height: 75px;
+}
+
+.rock-a {
+    left: 560px;
+    top: 1050px;
+}
+
+.rock-b {
+    left: 1510px;
+    top: 1050px;
+}
+
+.rock-c {
+    left: 430px;
+    top: 260px;
+}
+
+
+/* =========================
+   BUSH
+========================= */
+
+.map-decoration.bush {
+    width: 105px;
+}
+
+.bush-a {
+    left: 650px;
+    top: 1180px;
+}
+
+.bush-b {
+    left: 1460px;
+    top: 1220px;
+}
+
+
+/* =========================
+   BUNGA
+========================= */
+
+.map-decoration.flowers {
+    width: 90px;
+}
+
+.flowers-a {
+    left: 260px;
+    top: 950px;
+}
+
+.flowers-b {
+    left: 1750px;
+    top: 940px;
+}
+
+.flowers-c {
+    left: 1360px;
+    top: 300px;
+}
+
+
+/* =========================
+   LOG & STUMP
+========================= */
+
+.log-decoration {
+    width: 120px;
+
+    left: 1680px;
+    top: 1320px;
+}
+
+.stump-decoration {
+    width: 75px;
+
+    left: 380px;
+    top: 1180px;
+}
+
+
+/* =========================
+   LAMPU
+========================= */
+
+.map-decoration.lamp {
+    width: 70px;
+    z-index: 12;
+}
+
+.lamp-a {
+    left: 900px;
+    top: 1010px;
+}
+
+.lamp-b {
+    left: 1230px;
+    top: 1010px;
+}
+
+
+/* =========================
+   PAPAN ARAH PETARA
+========================= */
+
+#control-sign {
+    position: absolute;
+
+    left: 1370px;
+    top: 1180px;
+
+    width: 145px;
+    height: auto;
+
+    z-index: 12;
+
+    image-rendering: pixelated;
+
+    filter:
+        drop-shadow(0 6px 2px rgba(0,0,0,0.22));
+}
+
+
+/* =========================
+   PENJAGA PETARA
+========================= */
+
+#guide-npc {
+    left: 1280px;
+    top: 1280px;
+
+    width: 130px;
+
+    z-index: 25;
+
+    text-align: center;
+}
+
+.npc-pixel-sprite {
+    width: 100px;
+    height: auto;
+
+    image-rendering: pixelated;
+
+    filter:
+        drop-shadow(0 7px 2px rgba(0,0,0,0.25));
+}
+
+
+/* =========================
+   CHECKPOINT UMUM
+========================= */
+
+.checkpoint {
+    position: absolute;
+
+    min-width: 120px;
+
+    z-index: 20;
+
+    text-align: center;
+}
+
+.checkpoint-image {
+    display: block;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    filter:
+        drop-shadow(0 7px 3px rgba(0,0,0,0.22));
+}
+
+
+/* =========================
+   CP1 - MISI 1
+========================= */
+
+#checkpoint-1 {
+    left: 1025px;
+    top: 1080px;
+
+    width: 150px;
+}
+
+#checkpoint-1 .checkpoint-image {
+    width: 120px;
+    height: auto;
+}
+
+
+/* =========================
+   CP2 - DAPUR PETARA
+========================= */
+
+#checkpoint-2 {
+    left: 360px;
+    top: 670px;
+
+    width: 310px;
+}
+
+#checkpoint-2 .building-image {
+    width: 300px;
+    height: 230px;
+}
+
+
+/* =========================
+   CP3 - JAMBATAN PETARA
+========================= */
+
+#checkpoint-3 {
+    left: 935px;
+    top: 370px;
+
+    width: 330px;
+
+    z-index: 24;
+}
+
+#checkpoint-3 .bridge-image {
+    width: 320px;
+    height: 270px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   CP4 - KEDAI PAK ALI
+========================= */
+
+#checkpoint-4 {
+    left: 1530px;
+    top: 670px;
+
+    width: 310px;
+}
+
+#checkpoint-4 .building-image {
+    width: 300px;
+    height: 230px;
+}
+
+
+/* =========================
+   CP5 - GERBANG PETARA
+========================= */
+
+#checkpoint-5 {
+    left: 940px;
+    top: 70px;
+
+    width: 320px;
+
+    z-index: 22;
+}
+
+#checkpoint-5 .gate-image {
+    width: 310px;
+    height: 245px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   LABEL CHECKPOINT
+========================= */
+
+.checkpoint-label {
+    position: relative;
+
+    z-index: 30;
+
+    margin-top: 5px;
+
+    padding: 7px 12px;
+
+    background: rgba(37,48,51,0.94);
+
+    border: 3px solid rgba(255,255,255,0.9);
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    box-shadow:
+        0 4px 0 rgba(0,0,0,0.30);
+}
+
+
+/* =========================
+   LOCK CHECKPOINT
+========================= */
+
+.checkpoint-lock {
+    top: -35px;
+
+    z-index: 40;
+
+    padding: 7px 11px;
+
+    background: #172331;
+
+    border: 3px solid rgba(255,255,255,0.75);
+    border-radius: 10px;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 4px 0 rgba(0,0,0,0.35);
+}
+
+
+/* =========================
+   CHECKPOINT TERKUNCI
+========================= */
+
+.checkpoint.locked {
+    filter: none;
+}
+
+.checkpoint.locked .checkpoint-image {
+    filter:
+        brightness(0.78)
+        saturate(0.70)
+        drop-shadow(0 7px 3px rgba(0,0,0,0.22));
+}
+
+
+/* =========================
+   GLOW MISI 1
+========================= */
+
+#checkpoint-1 .checkpoint-glow {
+    width: 170px;
+    height: 170px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,230,64,0.60),
+            rgba(255,215,40,0.18) 45%,
+            transparent 72%
+        );
+}
+
+
+/* =========================
+   PLAYER
+========================= */
+
+#player {
+    left: 1070px;
+    top: 1320px;
+
+    width: 70px;
+    height: 90px;
+
+    z-index: 50;
+}
+
+.pixel-player {
+    width: 64px;
+    height: auto;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    filter:
+        drop-shadow(0 6px 2px rgba(0,0,0,0.28));
+}
+
+
+/* =========================
+   NAMA PLAYER
+========================= */
+
+.player-name-label {
+    bottom: calc(100% + 3px);
+
+    padding: 5px 9px;
+
+    background: rgba(12,24,34,0.92);
+
+    border: 2px solid rgba(255,255,255,0.9);
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    box-shadow:
+        0 3px 0 rgba(0,0,0,0.25);
+}
+
+
+/* =========================
+   HUD
+========================= */
+
+#game-hud {
+    top: 12px;
+
+    max-width: 1120px;
+
+    min-height: 70px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13,48,68,0.97),
+            rgba(8,31,48,0.98)
+        );
+
+    border:
+        3px solid rgba(181,232,255,0.90);
+
+    box-shadow:
+        0 6px 0 rgba(0,0,0,0.38),
+        0 12px 25px rgba(0,0,0,0.20);
+}
+
+
+/* =========================
+   INTERACTION PROMPT
+========================= */
+
+.interaction-prompt {
+    bottom: 25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17,44,63,0.98),
+            rgba(9,27,42,0.98)
+        );
+
+    border-color: #ffe45b;
+
+    box-shadow:
+        0 5px 0 rgba(0,0,0,0.38);
+}
+
+
+/* =========================
+   DEPTH
+========================= */
+
+.petara-river {
+    z-index: 2;
+}
+
+.map-decoration {
+    z-index: 5;
+}
+
+#checkpoint-2,
+#checkpoint-4 {
+    z-index: 15;
+}
+
+#checkpoint-3 {
+    z-index: 25;
+}
+
+#checkpoint-5 {
+    z-index: 20;
+}
+
+#guide-npc {
+    z-index: 30;
+}
+
+#player {
+    z-index: 50;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    #game-hud {
+        width: calc(100% - 20px);
+    }
+
+    .checkpoint-label {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   END PETARA RPG MAP REDESIGN
+========================================================= */   
 }
