@@ -4089,3 +4089,321 @@ button {
 /* =========================================================
    END MAP POLISH 2
    ========================================================= */
+
+
+/* =========================================================
+   FINAL REFERENCE MAP — 21/09/2026
+   Authoritative overrides. Do not paste another map patch
+   underneath this block.
+   ========================================================= */
+
+#game-viewport {
+    background: #4d9f45 !important;
+}
+
+#game-world {
+    width: 2200px !important;
+    height: 1600px !important;
+    overflow: hidden;
+    isolation: isolate;
+    image-rendering: pixelated;
+    background:
+        radial-gradient(circle at 15px 18px, rgba(255,255,255,.10) 2px, transparent 3px) 0 0/78px 78px,
+        radial-gradient(circle at 55px 48px, rgba(27,104,37,.15) 2px, transparent 3px) 0 0/95px 95px,
+        linear-gradient(#67c956, #62c451) !important;
+}
+
+/* Jalan utama: lebih kecil dan natural seperti reference */
+#game-world::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 1015px !important;
+    top: 350px !important;
+    width: 170px !important;
+    height: 1250px !important;
+    z-index: 2 !important;
+    border: 0 !important;
+    border-left: 8px solid rgba(139,93,44,.18) !important;
+    border-right: 8px solid rgba(139,93,44,.18) !important;
+    background:
+        radial-gradient(circle at 35px 30px, rgba(126,84,40,.20) 3px, transparent 4px) 0 0/70px 65px,
+        linear-gradient(90deg,#d7a45d,#edc47c 48%,#d7a45d) !important;
+    box-shadow: inset 0 8px 14px rgba(255,239,174,.16);
+}
+
+/* Jalan melintang di kawasan rumah/kedai */
+#game-world::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 180px !important;
+    top: 735px !important;
+    width: 1840px !important;
+    height: 155px !important;
+    z-index: 2 !important;
+    border: 0 !important;
+    border-top: 8px solid rgba(139,93,44,.18) !important;
+    border-bottom: 8px solid rgba(139,93,44,.18) !important;
+    background:
+        radial-gradient(circle at 45px 28px, rgba(126,84,40,.18) 3px, transparent 4px) 0 0/82px 70px,
+        linear-gradient(#d8a55e,#edc47c 48%,#d8a55e) !important;
+}
+
+/* Sungai besar di bahagian atas */
+.reference-river {
+    position: absolute;
+    left: 0;
+    top: 335px;
+    width: 2200px;
+    height: 245px;
+    z-index: 1;
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(255,255,255,.14) 0 4px,
+            transparent 4px 35px),
+        linear-gradient(180deg,#38b9e5 0%,#159bd1 48%,#32b4df 100%);
+    border-top: 14px solid #9bd86a;
+    border-bottom: 14px solid #9bd86a;
+    box-shadow:
+        inset 0 12px 0 rgba(0,105,150,.18),
+        inset 0 -12px 0 rgba(0,105,150,.18);
+}
+
+/* Tepi sungai berbatu/berumput */
+.reference-river::before,
+.reference-river::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: repeating-linear-gradient(90deg,#6b9b55 0 18px,#8cc967 18px 36px,#557f49 36px 48px);
+}
+.reference-river::before { top: -14px; }
+.reference-river::after { bottom: -14px; }
+
+/* Kolam kiri bawah */
+.reference-pond {
+    position: absolute;
+    left: 165px;
+    top: 1030px;
+    width: 440px;
+    height: 360px;
+    z-index: 1;
+    border: 18px solid #7eb75f;
+    border-radius: 35% 22% 32% 25%;
+    background:
+        radial-gradient(ellipse at 25% 70%, #71cf64 0 12px, transparent 13px),
+        radial-gradient(ellipse at 70% 28%, #71cf64 0 14px, transparent 15px),
+        linear-gradient(145deg,#39b9e5,#168fc7);
+    box-shadow: inset 0 0 0 10px rgba(15,111,151,.18), 0 0 0 5px rgba(64,118,55,.22);
+}
+
+/* Hiasan map */
+.ref-decor {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--w);
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    image-rendering: pixelated;
+    z-index: 4;
+    filter: drop-shadow(0 6px 2px rgba(27,67,24,.24));
+}
+.forest-tree { z-index: 6; }
+.forest-bush { z-index: 5; }
+.forest-rock { z-index: 5; }
+.forest-flower { z-index: 4; }
+.ref-fence { z-index: 5; }
+.ref-lamp { z-index: 8; }
+.ref-well { z-index: 7; }
+.ref-log, .ref-stump { z-index: 6; }
+
+/* Dapur / Kedai: bangunan besar, bukan ikon kecil */
+#checkpoint-2 {
+    left: 315px !important;
+    top: 610px !important;
+    width: 300px !important;
+    z-index: 20 !important;
+}
+#checkpoint-4 {
+    left: 1590px !important;
+    top: 610px !important;
+    width: 300px !important;
+    z-index: 20 !important;
+}
+#checkpoint-2 .building-image,
+#checkpoint-4 .building-image {
+    width: 300px !important;
+    max-width: none !important;
+    height: auto !important;
+    filter: drop-shadow(0 10px 3px rgba(32,55,26,.28)) !important;
+}
+
+/* Jambatan tepat merentasi sungai */
+#checkpoint-3 {
+    left: 1000px !important;
+    top: 355px !important;
+    width: 200px !important;
+    z-index: 22 !important;
+}
+#checkpoint-3 .bridge-image {
+    width: 200px !important;
+    max-width: none !important;
+    height: auto !important;
+    filter: drop-shadow(0 8px 2px rgba(0,65,91,.30)) !important;
+}
+
+/* Misi 1 di laluan bawah */
+#checkpoint-1 {
+    left: 1040px !important;
+    top: 1130px !important;
+    width: 120px !important;
+    z-index: 24 !important;
+}
+#checkpoint-1 .checkpoint-flag-image {
+    width: 115px !important;
+    max-width: none !important;
+    height: auto !important;
+}
+
+/* Gerbang akhir di utara */
+#checkpoint-5 {
+    left: 990px !important;
+    top: 90px !important;
+    width: 220px !important;
+    z-index: 20 !important;
+}
+#checkpoint-5 .gate-image {
+    width: 220px !important;
+    max-width: none !important;
+    height: auto !important;
+}
+
+/* Label checkpoint gaya papan */
+.checkpoint-label {
+    margin-top: 5px !important;
+    padding: 7px 12px !important;
+    border: 3px solid rgba(255,255,255,.9) !important;
+    border-radius: 9px !important;
+    background: #263846 !important;
+    box-shadow: 0 4px 0 rgba(0,0,0,.22) !important;
+    font-size: 11px !important;
+}
+.checkpoint-lock {
+    top: -30px !important;
+    z-index: 30 !important;
+}
+
+/* Papan arah & penjaga */
+#control-sign {
+    left: 730px !important;
+    top: 1210px !important;
+    width: 155px !important;
+    height: auto !important;
+    z-index: 15 !important;
+}
+#guide-npc {
+    left: 1320px !important;
+    top: 1210px !important;
+    z-index: 25 !important;
+}
+.npc-pixel-sprite {
+    width: 95px !important;
+    height: auto !important;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 7px 2px rgba(0,0,0,.22));
+}
+
+/* Kawasan mula tidak lagi jadi tompok hijau besar */
+.start-zone {
+    left: 920px !important;
+    top: 1180px !important;
+    width: 360px !important;
+    height: 330px !important;
+    background: radial-gradient(circle,rgba(255,229,89,.17),transparent 68%) !important;
+}
+.zone-label { display: none !important; }
+
+/* Player */
+#player {
+    z-index: 50 !important;
+}
+#player-sprite.pixel-player {
+    width: 58px !important;
+    height: auto !important;
+    max-width: none !important;
+    image-rendering: pixelated;
+    object-fit: contain;
+}
+
+/* Perkhemahan kanan bawah */
+.reference-camp {
+    position: absolute;
+    left: 1540px;
+    top: 1110px;
+    width: 300px;
+    height: 250px;
+    z-index: 7;
+    pointer-events: none;
+}
+.camp-tent {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 120px;
+    height: 95px;
+    overflow: hidden;
+    color: #f1dfb7;
+    font-size: 120px;
+    line-height: 95px;
+    text-shadow: 5px 7px 0 #8b6942;
+}
+.camp-fire {
+    position: absolute;
+    left: 80px;
+    top: 105px;
+    font-size: 52px;
+    filter: drop-shadow(0 6px 2px rgba(0,0,0,.25));
+}
+.camp-log {
+    position: absolute;
+    width: 90px;
+    height: 24px;
+    border-radius: 14px;
+    background: #8b542d;
+    border: 5px solid #5c351e;
+}
+.camp-log-a { left: 10px; top: 175px; transform: rotate(8deg); }
+.camp-log-b { right: 15px; top: 175px; transform: rotate(-8deg); }
+
+/* HUD kekal jelas di atas map */
+#game-hud {
+    z-index: 200 !important;
+    border-color: #d9e8c0 !important;
+}
+
+/* Pastikan scenery tidak menghalang klik/movement */
+.ref-decor,
+.reference-river,
+.reference-pond,
+.reference-camp {
+    pointer-events: none !important;
+}
+
+/* Paparan lebih kemas pada skrin kecil */
+@media (max-width: 1000px) {
+    #game-hud {
+        width: calc(100% - 20px) !important;
+    }
+    .checkpoint-label {
+        font-size: 10px !important;
+    }
+}
+
+/* =========================================================
+   END FINAL REFERENCE MAP
+   ========================================================= */
+

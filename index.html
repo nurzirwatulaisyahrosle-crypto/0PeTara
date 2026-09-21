@@ -18,7 +18,6 @@
 
     <!-- CSS utama -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="map-density.css">
 </head>
 
 
@@ -239,191 +238,178 @@
     ================================================= -->
 
     <main id="game-viewport">
-
         <div id="game-world">
 
-            <!-- =================================================
-                 MAP DENSITY PACK — visual scenery only
-            ================================================== -->
-            <div class="petara-pond pond-left"></div>
+            <!-- Latar RPG padat seperti reference -->
+            <div class="reference-river"></div>
+            <div class="reference-pond"></div>
+            <div class="reference-camp">
+                <div class="camp-tent">▲</div>
+                <div class="camp-fire">🔥</div>
+                <div class="camp-log camp-log-a"></div>
+                <div class="camp-log camp-log-b"></div>
+            </div>
 
-            <!-- HUTAN KIRI -->
-            <img src="assets/tree-01.png" class="dense-decor dense-tree dt01" alt="">
-            <img src="assets/tree-02.png" class="dense-decor dense-tree dt02" alt="">
-            <img src="assets/tree-03.png" class="dense-decor dense-tree dt03" alt="">
-            <img src="assets/tree-01.png" class="dense-decor dense-tree dt04" alt="">
-            <img src="assets/tree-02.png" class="dense-decor dense-tree dt05" alt="">
-            <img src="assets/tree-03.png" class="dense-decor dense-tree dt06" alt="">
-            <img src="assets/tree-01.png" class="dense-decor dense-tree dt07" alt="">
-            <img src="assets/tree-02.png" class="dense-decor dense-tree dt08" alt="">
-            <img src="assets/tree-03.png" class="dense-decor dense-tree dt09" alt="">
+            <!-- Hutan tebal di sekeliling map -->
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:20px;--y:120px;--w:190px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:145px;--y:85px;--w:175px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:285px;--y:120px;--w:170px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:420px;--y:80px;--w:185px;" alt="">
+            <img src="assets/tree-04.png" class="ref-decor forest-tree" style="--x:560px;--y:115px;--w:170px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:700px;--y:65px;--w:180px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:1470px;--y:75px;--w:180px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:1610px;--y:115px;--w:190px;" alt="">
+            <img src="assets/tree-04.png" class="ref-decor forest-tree" style="--x:1760px;--y:70px;--w:170px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:1900px;--y:115px;--w:185px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:2040px;--y:75px;--w:185px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:10px;--y:300px;--w:180px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:150px;--y:350px;--w:190px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:340px;--y:310px;--w:175px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:1840px;--y:320px;--w:180px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:1990px;--y:350px;--w:190px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:2110px;--y:300px;--w:175px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:15px;--y:760px;--w:190px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:120px;--y:900px;--w:175px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:25px;--y:1080px;--w:180px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:160px;--y:1230px;--w:190px;" alt="">
+            <img src="assets/tree-04.png" class="ref-decor forest-tree" style="--x:320px;--y:1370px;--w:170px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:500px;--y:1450px;--w:180px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:2010px;--y:760px;--w:190px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:1900px;--y:900px;--w:175px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:2050px;--y:1080px;--w:180px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:1900px;--y:1240px;--w:190px;" alt="">
+            <img src="assets/tree-04.png" class="ref-decor forest-tree" style="--x:1730px;--y:1390px;--w:170px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:1540px;--y:1460px;--w:180px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:610px;--y:1110px;--w:170px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:760px;--y:1320px;--w:165px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:1370px;--y:1120px;--w:170px;" alt="">
+            <img src="assets/tree-01.png" class="ref-decor forest-tree" style="--x:1460px;--y:1320px;--w:175px;" alt="">
+            <img src="assets/tree-02.png" class="ref-decor forest-tree" style="--x:550px;--y:520px;--w:165px;" alt="">
+            <img src="assets/tree-03.png" class="ref-decor forest-tree" style="--x:1500px;--y:520px;--w:165px;" alt="">
 
-            <!-- HUTAN KANAN -->
-            <img src="assets/tree-01.png" class="dense-decor dense-tree dt10" alt="">
-            <img src="assets/tree-02.png" class="dense-decor dense-tree dt11" alt="">
-            <img src="assets/tree-03.png" class="dense-decor dense-tree dt12" alt="">
-            <img src="assets/tree-01.png" class="dense-decor dense-tree dt13" alt="">
-            <img src="assets/tree-02.png" class="dense-decor dense-tree dt14" alt="">
-            <img src="assets/tree-03.png" class="dense-decor dense-tree dt15" alt="">
-            <img src="assets/tree-01.png" class="dense-decor dense-tree dt16" alt="">
-            <img src="assets/tree-02.png" class="dense-decor dense-tree dt17" alt="">
-            <img src="assets/tree-03.png" class="dense-decor dense-tree dt18" alt="">
+            <!-- Semak, bunga dan batu mengisi ruang hijau -->
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:240px;--y:260px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:480px;--y:260px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:690px;--y:300px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:1510px;--y:280px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:1740px;--y:260px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:1980px;--y:280px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:260px;--y:650px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:470px;--y:610px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:650px;--y:670px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:1510px;--y:650px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:1710px;--y:610px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:1930px;--y:660px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:330px;--y:1030px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:520px;--y:1160px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:690px;--y:1020px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:1450px;--y:1040px;--w:85px;" alt="">
+            <img src="assets/bush.png" class="ref-decor forest-bush" style="--x:1640px;--y:1160px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:1840px;--y:1030px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:860px;--y:1270px;--w:85px;" alt="">
+            <img src="assets/bush-flowers.png" class="ref-decor forest-bush" style="--x:1260px;--y:1280px;--w:85px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:390px;--y:470px;--w:80px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:680px;--y:540px;--w:80px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:1770px;--y:500px;--w:80px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:1940px;--y:590px;--w:80px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:280px;--y:1180px;--w:80px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:590px;--y:1290px;--w:80px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:1600px;--y:1260px;--w:80px;" alt="">
+            <img src="assets/rock.png" class="ref-decor forest-rock" style="--x:1870px;--y:1180px;--w:80px;" alt="">
+            <img src="assets/flowers-01.png" class="ref-decor forest-flower" style="--x:220px;--y:520px;--w:55px;" alt="">
+            <img src="assets/flowers-02.png" class="ref-decor forest-flower" style="--x:520px;--y:430px;--w:55px;" alt="">
+            <img src="assets/flowers-03.png" class="ref-decor forest-flower" style="--x:760px;--y:590px;--w:55px;" alt="">
+            <img src="assets/flowers-01.png" class="ref-decor forest-flower" style="--x:1430px;--y:590px;--w:55px;" alt="">
+            <img src="assets/flowers-02.png" class="ref-decor forest-flower" style="--x:1690px;--y:440px;--w:55px;" alt="">
+            <img src="assets/flowers-03.png" class="ref-decor forest-flower" style="--x:1980px;--y:520px;--w:55px;" alt="">
+            <img src="assets/flowers-01.png" class="ref-decor forest-flower" style="--x:390px;--y:920px;--w:55px;" alt="">
+            <img src="assets/flowers-02.png" class="ref-decor forest-flower" style="--x:610px;--y:970px;--w:55px;" alt="">
+            <img src="assets/flowers-03.png" class="ref-decor forest-flower" style="--x:1570px;--y:930px;--w:55px;" alt="">
+            <img src="assets/flowers-01.png" class="ref-decor forest-flower" style="--x:1810px;--y:990px;--w:55px;" alt="">
+            <img src="assets/flowers-02.png" class="ref-decor forest-flower" style="--x:880px;--y:1180px;--w:55px;" alt="">
+            <img src="assets/flowers-03.png" class="ref-decor forest-flower" style="--x:1280px;--y:1170px;--w:55px;" alt="">
 
-            <!-- SEMAK / BUNGA -->
-            <img src="assets/bush-flowers.png" class="dense-decor dense-bush db01" alt="">
-            <img src="assets/bush.png" class="dense-decor dense-bush db02" alt="">
-            <img src="assets/bush-flowers.png" class="dense-decor dense-bush db03" alt="">
-            <img src="assets/bush.png" class="dense-decor dense-bush db04" alt="">
-            <img src="assets/bush-flowers.png" class="dense-decor dense-bush db05" alt="">
-            <img src="assets/bush.png" class="dense-decor dense-bush db06" alt="">
-            <img src="assets/flowers-01.png" class="dense-decor dense-flower df01" alt="">
-            <img src="assets/flowers-02.png" class="dense-decor dense-flower df02" alt="">
-            <img src="assets/flowers-03.png" class="dense-decor dense-flower df03" alt="">
-            <img src="assets/flowers-01.png" class="dense-decor dense-flower df04" alt="">
-            <img src="assets/flowers-02.png" class="dense-decor dense-flower df05" alt="">
-            <img src="assets/flowers-03.png" class="dense-decor dense-flower df06" alt="">
+            <!-- Kawasan berpagar -->
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:250px;--y:735px;--w:190px;" alt="">
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:440px;--y:735px;--w:190px;" alt="">
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:610px;--y:735px;--w:190px;" alt="">
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:1400px;--y:735px;--w:190px;" alt="">
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:1590px;--y:735px;--w:190px;" alt="">
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:1780px;--y:735px;--w:190px;" alt="">
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:420px;--y:1030px;--w:190px;" alt="">
+            <img src="assets/fence.png" class="ref-decor ref-fence" style="--x:1590px;--y:1030px;--w:190px;" alt="">
 
-            <!-- BATU / KAYU -->
-            <img src="assets/rock.png" class="dense-decor dense-rock dr01" alt="">
-            <img src="assets/rock.png" class="dense-decor dense-rock dr02" alt="">
-            <img src="assets/rock.png" class="dense-decor dense-rock dr03" alt="">
-            <img src="assets/rock.png" class="dense-decor dense-rock dr04" alt="">
-            <img src="assets/stump.png" class="dense-decor dense-small ds01" alt="">
-            <img src="assets/stump.png" class="dense-decor dense-small ds02" alt="">
-            <img src="assets/log.png" class="dense-decor dense-log dl01" alt="">
-            <img src="assets/log.png" class="dense-decor dense-log dl02" alt="">
+            <img src="assets/well.png" class="ref-decor ref-well" style="--x:650px;--y:780px;--w:105px;" alt="">
+            <img src="assets/log.png" class="ref-decor ref-log" style="--x:260px;--y:1320px;--w:120px;" alt="">
+            <img src="assets/stump.png" class="ref-decor ref-stump" style="--x:490px;--y:870px;--w:75px;" alt="">
+            <img src="assets/log.png" class="ref-decor ref-log" style="--x:1770px;--y:1320px;--w:120px;" alt="">
+            <img src="assets/stump.png" class="ref-decor ref-stump" style="--x:1680px;--y:870px;--w:75px;" alt="">
 
-            <!-- PAGAR KAWASAN DAPUR / KEDAI -->
-            <img src="assets/fence.png" class="dense-decor dense-fence fence01" alt="">
-            <img src="assets/fence.png" class="dense-decor dense-fence fence02" alt="">
-            <img src="assets/fence.png" class="dense-decor dense-fence fence03" alt="">
-            <img src="assets/fence.png" class="dense-decor dense-fence fence04" alt="">
-            <img src="assets/crate.png" class="dense-decor dense-crate crate01" alt="">
-            <img src="assets/crate.png" class="dense-decor dense-crate crate02" alt="">
+            <!-- Lampu di laluan utama -->
+            <img src="assets/lamp.png" class="ref-decor ref-lamp" style="--x:900px;--y:890px;--w:58px;" alt="">
+            <img src="assets/lamp.png" class="ref-decor ref-lamp" style="--x:1240px;--y:890px;--w:58px;" alt="">
+            <img src="assets/lamp.png" class="ref-decor ref-lamp" style="--x:900px;--y:1180px;--w:58px;" alt="">
+            <img src="assets/lamp.png" class="ref-decor ref-lamp" style="--x:1240px;--y:1180px;--w:58px;" alt="">
 
-
-            <!-- HIASAN ALAM PETARA -->
-            <img src="assets/tree-01.png" class="map-decoration tree tree-a" alt="">
-            <img src="assets/tree-02.png" class="map-decoration tree tree-b" alt="">
-            <img src="assets/tree-03.png" class="map-decoration tree tree-c" alt="">
-            <img src="assets/tree-01.png" class="map-decoration tree tree-d" alt="">
-            <img src="assets/tree-02.png" class="map-decoration tree tree-e" alt="">
-            <img src="assets/tree-04.png" class="map-decoration tree tree-f" alt="">
-            <img src="assets/tree-03.png" class="map-decoration tree tree-g" alt="">
-            <img src="assets/tree-01.png" class="map-decoration tree tree-h" alt="">
-            <img src="assets/tree-02.png" class="map-decoration tree tree-i" alt="">
-            <img src="assets/tree-04.png" class="map-decoration tree tree-j" alt="">
-
-            <img src="assets/rock.png" class="map-decoration rock rock-a" alt="">
-            <img src="assets/rock.png" class="map-decoration rock rock-b" alt="">
-            <img src="assets/rock.png" class="map-decoration rock rock-c" alt="">
-
-            <img src="assets/bush.png" class="map-decoration bush bush-a" alt="">
-            <img src="assets/bush-flowers.png" class="map-decoration bush bush-b" alt="">
-            <img src="assets/flowers-01.png" class="map-decoration flowers flowers-a" alt="">
-            <img src="assets/flowers-02.png" class="map-decoration flowers flowers-b" alt="">
-            <img src="assets/flowers-03.png" class="map-decoration flowers flowers-c" alt="">
-            <img src="assets/log.png" class="map-decoration log-decoration" alt="">
-            <img src="assets/stump.png" class="map-decoration stump-decoration" alt="">
-
-            <!-- SUNGAI PETARA -->
-            <div class="petara-river"></div>
-
-            <!-- KAWASAN PERMULAAN -->
+            <!-- Kawasan permulaan -->
             <div class="world-zone start-zone" data-zone="start">
                 <div class="zone-label">PERMULAAN PETARA</div>
             </div>
 
-            <!-- PAPAN ARAH -->
-            <img
-                src="assets/direction-sign.png"
-                id="control-sign"
-                class="world-object petara-direction-sign"
-                alt="Papan arah PeTara"
-            >
+            <!-- Papan arah -->
+            <img src="assets/direction-sign.png"
+                 id="control-sign"
+                 class="world-object petara-direction-sign"
+                 alt="Papan arah PeTara">
 
-            <!-- PENJAGA PETARA -->
+            <!-- Penjaga PeTara -->
             <div id="guide-npc" class="npc">
                 <div class="npc-name">Penjaga PeTara</div>
-                <img
-                    src="assets/penjaga-petara.png"
-                    class="npc-pixel-sprite"
-                    alt="Penjaga PeTara"
-                >
+                <img src="assets/penjaga-petara.png" class="npc-pixel-sprite" alt="Penjaga PeTara">
             </div>
 
-            <!-- CHECKPOINT 1 -->
+            <!-- Checkpoint 1 -->
             <div id="checkpoint-1" class="checkpoint unlocked" data-checkpoint="1">
                 <div class="checkpoint-glow"></div>
-                <img
-                    src="assets/checkpoint.png"
-                    class="checkpoint-image checkpoint-flag-image"
-                    alt="Checkpoint 1"
-                >
+                <img src="assets/checkpoint.png" class="checkpoint-image checkpoint-flag-image" alt="Checkpoint 1">
                 <div class="checkpoint-label">MISI 1</div>
             </div>
 
-            <!-- CHECKPOINT 2 -->
+            <!-- Checkpoint 2: Dapur -->
             <div id="checkpoint-2" class="checkpoint locked" data-checkpoint="2">
                 <div class="checkpoint-lock">🔒</div>
-                <img
-                    src="assets/dapur-petara.png"
-                    class="checkpoint-image building-image"
-                    alt="Dapur PeTara"
-                >
+                <img src="assets/dapur-petara.png" class="checkpoint-image building-image" alt="Dapur PeTara">
                 <div class="checkpoint-label">DAPUR PETARA</div>
             </div>
 
-            <!-- CHECKPOINT 3 -->
+            <!-- Checkpoint 3: Jambatan -->
             <div id="checkpoint-3" class="checkpoint locked" data-checkpoint="3">
                 <div class="checkpoint-lock">🔒</div>
-                <img
-                    src="assets/bridge.png"
-                    class="checkpoint-image bridge-image"
-                    alt="Jambatan PeTara"
-                >
+                <img src="assets/bridge.png" class="checkpoint-image bridge-image" alt="Jambatan PeTara">
                 <div class="checkpoint-label">JAMBATAN PETARA</div>
             </div>
 
-            <!-- CHECKPOINT 4 -->
+            <!-- Checkpoint 4: Kedai -->
             <div id="checkpoint-4" class="checkpoint locked" data-checkpoint="4">
                 <div class="checkpoint-lock">🔒</div>
-                <img
-                    src="assets/kedai-pak-ali.png"
-                    class="checkpoint-image building-image"
-                    alt="Kedai Pak Ali"
-                >
+                <img src="assets/kedai-pak-ali.png" class="checkpoint-image building-image" alt="Kedai Pak Ali">
                 <div class="checkpoint-label">KEDAI PAK ALI</div>
             </div>
 
-            <!-- CHECKPOINT 5 -->
-            <div
-                id="checkpoint-5"
-                class="checkpoint locked final-checkpoint"
-                data-checkpoint="5"
-            >
+            <!-- Checkpoint 5 -->
+            <div id="checkpoint-5" class="checkpoint locked final-checkpoint" data-checkpoint="5">
                 <div class="checkpoint-lock">🔒</div>
-                <img
-                    src="assets/gate-petara.png"
-                    class="checkpoint-image gate-image"
-                    alt="Gerbang PeTara"
-                >
+                <img src="assets/gate-petara.png" class="checkpoint-image gate-image" alt="Gerbang PeTara">
                 <div class="checkpoint-label">GERBANG PETARA</div>
             </div>
 
-            <!-- LAMPU HIASAN -->
-            <img src="assets/lamp.png" class="map-decoration lamp lamp-a" alt="">
-            <img src="assets/lamp.png" class="map-decoration lamp lamp-b" alt="">
-
-            <!-- PLAYER -->
+            <!-- Player -->
             <div id="player">
                 <div id="player-name-label" class="player-name-label">Pemain</div>
-                <img
-                    id="player-sprite"
-                    class="player-sprite pixel-player"
-                    src="assets/player-boy-front.png"
-                    alt="Pengembara"
-                >
+                <img id="player-sprite"
+                     class="player-sprite pixel-player"
+                     src="assets/player-boy-front.png"
+                     alt="Pengembara">
             </div>
 
         </div>
