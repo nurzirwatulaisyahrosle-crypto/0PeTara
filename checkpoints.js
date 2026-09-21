@@ -517,12 +517,8 @@ function renderCP1Question() {
                                 class="
                                     cp1-choice
                                     mission-action-button
-                                "
-                                data-id="
-                                    ${choice.id}
-                                "
-                                data-correct="
-                                    ${choice.correct}
+                              data-id="${choice.id}"
+data-correct="${choice.correct}"
                                 "
                                 style="
                                     min-height:130px;
