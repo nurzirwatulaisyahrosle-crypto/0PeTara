@@ -1,0 +1,2420 @@
+/* =========================================================
+   KEMBARA PETARA
+   style.css
+   Modern 2D Pixel Adventure UI
+========================================================= */
+
+
+/* =========================================================
+   1. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #101827;
+    color: #ffffff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   2. START SCREEN
+========================================================= */
+
+#start-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #63c7ff 0%,
+            #89dbff 47%,
+            #c9f4ff 100%
+        );
+}
+
+
+/* =========================================================
+   3. START BACKGROUND
+========================================================= */
+
+.start-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+/* Sun */
+
+.start-background::before {
+    content: "";
+    position: absolute;
+
+    width: 115px;
+    height: 115px;
+
+    right: 8%;
+    top: 8%;
+
+    background: #ffe56c;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 12px rgba(255, 229, 108, 0.16),
+        0 0 60px rgba(255, 229, 108, 0.7);
+
+    animation: sunPulse 3s ease-in-out infinite;
+}
+
+
+/* Grass */
+
+.start-background::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 23%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #65c94c 0%,
+            #47a83d 100%
+        );
+
+    border-top: 8px solid #8ce267;
+}
+
+
+/* =========================================================
+   4. CLOUDS
+========================================================= */
+
+.cloud {
+    position: absolute;
+
+    width: 120px;
+    height: 34px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border-radius: 40px;
+
+    filter:
+        drop-shadow(0 5px 0 rgba(0, 0, 0, 0.05));
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+
+    background: inherit;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 55px;
+    height: 55px;
+
+    left: 20px;
+    top: -27px;
+}
+
+.cloud::after {
+    width: 70px;
+    height: 70px;
+
+    right: 15px;
+    top: -38px;
+}
+
+.cloud-1 {
+    top: 18%;
+    left: -150px;
+
+    animation: cloudMoveOne 22s linear infinite;
+}
+
+.cloud-2 {
+    top: 32%;
+    left: -220px;
+
+    transform: scale(0.7);
+    opacity: 0.75;
+
+    animation: cloudMoveTwo 31s linear infinite;
+}
+
+
+/* =========================================================
+   5. HILLS
+========================================================= */
+
+.hill {
+    position: absolute;
+
+    bottom: 17%;
+
+    width: 430px;
+    height: 180px;
+
+    border-radius: 50% 50% 0 0;
+}
+
+.hill-1 {
+    left: -80px;
+    background: #65c05b;
+}
+
+.hill-2 {
+    right: -100px;
+    background: #55ad50;
+
+    width: 520px;
+    height: 220px;
+}
+
+
+/* =========================================================
+   6. START PANEL
+========================================================= */
+
+.start-panel {
+    position: relative;
+    z-index: 10;
+
+    width: min(520px, 90vw);
+
+    padding: 28px 36px 32px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(21, 39, 67, 0.96),
+            rgba(14, 27, 48, 0.98)
+        );
+
+    border: 4px solid #ffffff;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 9px 0 #07101e,
+        0 18px 40px rgba(0, 0, 0, 0.32);
+
+    text-align: center;
+
+    animation: panelEnter 0.65s ease-out;
+}
+
+
+/* =========================================================
+   7. LOGO
+========================================================= */
+
+.logo-area {
+    margin-bottom: 22px;
+}
+
+.logo-star {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 4px;
+
+    color: #fff07a;
+    font-size: 32px;
+
+    animation: starFloat 2s ease-in-out infinite;
+}
+
+.game-title {
+    font-size: clamp(35px, 5vw, 56px);
+    line-height: 0.95;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 4px 0 #142033;
+}
+
+.game-title span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #ffd83d;
+
+    text-shadow:
+        0 4px 0 #b97700;
+}
+
+.tagline {
+    margin-top: 14px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #cdeaff;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   8. NAME INPUT
+========================================================= */
+
+.name-section {
+    margin-top: 18px;
+}
+
+.name-section label,
+.section-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+#player-name {
+    width: 100%;
+
+    padding: 13px 16px;
+
+    border: 3px solid #65d8ff;
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #152743;
+
+    text-align: center;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    box-shadow:
+        inset 0 -3px 0 rgba(0, 0, 0, 0.08);
+}
+
+#player-name:focus {
+    border-color: #ffe34f;
+
+    box-shadow:
+        0 0 0 4px rgba(255, 227, 79, 0.16);
+}
+
+#player-name::placeholder {
+    color: #8291a6;
+}
+
+.input-error {
+    margin-top: 7px;
+
+    color: #ff8e8e;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   9. AVATAR
+========================================================= */
+
+.avatar-section {
+    margin-top: 18px;
+}
+
+.avatar-list {
+    display: flex;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.avatar-option {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #516985;
+    border-radius: 14px;
+
+    background: #243a59;
+
+    box-shadow:
+        0 5px 0 #0b1627;
+
+    transition:
+        transform 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+}
+
+.avatar-option:hover {
+    transform: translateY(-3px);
+    border-color: #9be7ff;
+}
+
+.avatar-option.selected {
+    background: #315f77;
+
+    border-color: #ffe34f;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 227, 79, 0.16),
+        0 5px 0 #0b1627;
+
+    transform: translateY(-3px);
+}
+
+.avatar-preview {
+    font-size: 35px;
+}
+
+
+/* =========================================================
+   10. PRIMARY BUTTON
+========================================================= */
+
+.primary-button {
+    min-height: 52px;
+
+    padding: 12px 24px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffd943,
+            #ffb91e
+        );
+
+    color: #422d00;
+
+    font-weight: 900;
+    font-size: 15px;
+
+    letter-spacing: 0.4px;
+
+    border: 3px solid #fff19a;
+
+    box-shadow:
+        0 6px 0 #a96a00;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+.start-panel > .primary-button {
+    width: 100%;
+    margin-top: 23px;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 0 #a96a00;
+}
+
+.primary-button:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 1px 0 #a96a00;
+}
+
+.button-icon {
+    margin-right: 6px;
+}
+
+
+/* =========================================================
+   11. GAME SCREEN
+========================================================= */
+
+#game-screen {
+    background: #65b947;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   12. HUD
+========================================================= */
+
+#game-hud {
+    position: fixed;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 100;
+
+    width: calc(100% - 30px);
+    max-width: 1050px;
+
+    min-height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 14px;
+
+    background: rgba(12, 26, 43, 0.94);
+
+    border: 3px solid rgba(255, 255, 255, 0.88);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 0 rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(5px);
+}
+
+.hud-player {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.hud-avatar {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #2b4868;
+
+    border: 2px solid #8bdcff;
+    border-radius: 10px;
+
+    font-size: 27px;
+}
+
+.hud-player-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-small-text {
+    color: #91abc6;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+#hud-player-name {
+    max-width: 180px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+.hud-score {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 13px;
+
+    background: #243a59;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+.hud-icon {
+    animation: starFloat 1.8s ease-in-out infinite;
+}
+
+.hud-progress {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.checkpoint-stars {
+    color: #ffd83d;
+
+    font-size: 19px;
+
+    letter-spacing: 2px;
+}
+
+.checkpoint-counter {
+    font-weight: 900;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   13. GAME VIEWPORT
+========================================================= */
+
+#game-viewport {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            #79ca58,
+            #5eb348
+        );
+}
+
+
+/* =========================================================
+   14. GAME WORLD
+========================================================= */
+
+#game-world {
+    position: absolute;
+
+    width: 2200px;
+    height: 1600px;
+
+    left: 0;
+    top: 0;
+
+    transform-origin: 0 0;
+
+    background-color: #71c957;
+
+    background-image:
+        radial-gradient(
+            circle at 20px 20px,
+            rgba(255, 255, 255, 0.06) 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 70px 65px,
+            rgba(24, 103, 39, 0.12) 3px,
+            transparent 4px
+        );
+
+    background-size:
+        90px 90px,
+        120px 120px;
+}
+
+
+/* Main path */
+
+#game-world::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 1380px;
+
+    left: 1015px;
+    top: 120px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c79a5b,
+            #dfb875 50%,
+            #c79a5b
+        );
+
+    border-left: 7px solid rgba(111, 73, 36, 0.18);
+    border-right: 7px solid rgba(111, 73, 36, 0.18);
+}
+
+
+/* Crossroad */
+
+#game-world::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1100px;
+    height: 150px;
+
+    left: 550px;
+    top: 710px;
+
+    background:
+        linear-gradient(
+            #c79a5b,
+            #dfb875 50%,
+            #c79a5b
+        );
+
+    border-top: 7px solid rgba(111, 73, 36, 0.18);
+    border-bottom: 7px solid rgba(111, 73, 36, 0.18);
+}
+
+
+/* =========================================================
+   15. WORLD ZONES
+========================================================= */
+
+.world-zone {
+    position: absolute;
+
+    border-radius: 30px;
+
+    pointer-events: none;
+}
+
+.start-zone {
+    left: 880px;
+    top: 1250px;
+
+    width: 450px;
+    height: 260px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 229, 100, 0.9),
+            rgba(87, 178, 71, 0.3) 70%,
+            transparent 72%
+        );
+}
+
+.zone-label {
+    position: absolute;
+
+    width: 100%;
+
+    bottom: 20px;
+
+    text-align: center;
+
+    color: rgba(22, 78, 34, 0.55);
+
+    font-size: 20px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   16. WORLD OBJECTS
+========================================================= */
+
+.world-object,
+.npc,
+.checkpoint,
+#player {
+    position: absolute;
+    z-index: 10;
+}
+
+
+/* =========================================================
+   17. CONTROL SIGN
+========================================================= */
+
+.control-sign {
+    left: 760px;
+    top: 1290px;
+
+    width: 170px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    background: #9b6734;
+
+    color: #fff4d4;
+
+    border: 5px solid #633c1f;
+    border-radius: 8px;
+
+    box-shadow:
+        0 7px 0 rgba(67, 40, 19, 0.4);
+}
+
+.control-sign::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 65px;
+
+    left: 50%;
+    top: 100%;
+
+    transform: translateX(-50%);
+
+    background: #6c4427;
+
+    z-index: -1;
+}
+
+.sign-title {
+    font-size: 12px;
+    font-weight: 900;
+
+    margin-bottom: 6px;
+}
+
+.sign-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 4px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   18. NPC
+========================================================= */
+
+#guide-npc {
+    left: 1230px;
+    top: 1240px;
+
+    text-align: center;
+
+    animation: npcIdle 2s ease-in-out infinite;
+}
+
+.npc-name {
+    padding: 5px 9px;
+
+    margin-bottom: 4px;
+
+    background: rgba(11, 25, 42, 0.9);
+
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.npc-character {
+    font-size: 58px;
+
+    filter:
+        drop-shadow(0 6px 0 rgba(0, 0, 0, 0.2));
+}
+
+
+/* =========================================================
+   19. CHECKPOINT BASE
+========================================================= */
+
+.checkpoint {
+    min-width: 110px;
+
+    text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.checkpoint.unlocked {
+    cursor: pointer;
+}
+
+.checkpoint.unlocked:hover {
+    transform: scale(1.05);
+}
+
+.checkpoint.locked {
+    filter: grayscale(0.65) brightness(0.75);
+}
+
+.checkpoint-lock {
+    position: absolute;
+
+    top: -23px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    padding: 4px 8px;
+
+    background: rgba(10, 20, 34, 0.9);
+
+    border-radius: 8px;
+
+    font-size: 20px;
+}
+
+.checkpoint-flag,
+.checkpoint-building {
+    font-size: 64px;
+
+    filter:
+        drop-shadow(0 7px 0 rgba(0, 0, 0, 0.2));
+}
+
+.checkpoint-label {
+    display: inline-block;
+
+    margin-top: 4px;
+
+    padding: 6px 9px;
+
+    background: rgba(13, 29, 48, 0.92);
+
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   20. CHECKPOINT POSITIONS
+========================================================= */
+
+#checkpoint-1 {
+    left: 1040px;
+    top: 1050px;
+}
+
+#checkpoint-2 {
+    left: 530px;
+    top: 700px;
+}
+
+#checkpoint-3 {
+    left: 1040px;
+    top: 515px;
+}
+
+#checkpoint-4 {
+    left: 1570px;
+    top: 700px;
+}
+
+#checkpoint-5 {
+    left: 1015px;
+    top: 160px;
+}
+
+
+/* =========================================================
+   21. CHECKPOINT GLOW
+========================================================= */
+
+.checkpoint-glow {
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 234, 91, 0.55),
+            rgba(255, 234, 91, 0.12) 50%,
+            transparent 72%
+        );
+
+    animation: checkpointGlow 1.6s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   22. PETARA GATE
+========================================================= */
+
+.petara-gate {
+    position: relative;
+
+    width: 180px;
+    height: 125px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #394a70,
+            #6072a0,
+            #394a70
+        );
+
+    border:
+        8px solid #273550;
+
+    border-radius:
+        45px 45px 8px 8px;
+
+    box-shadow:
+        inset 0 0 0 5px rgba(255, 255, 255, 0.08),
+        0 9px 0 rgba(0, 0, 0, 0.2);
+}
+
+.gate-star {
+    color: #ffd83d;
+
+    font-size: 38px;
+
+    text-shadow:
+        0 0 16px rgba(255, 216, 61, 0.7);
+}
+
+.gate-title {
+    margin-top: 5px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   23. PLAYER
+========================================================= */
+
+#player {
+    left: 1080px;
+    top: 1370px;
+
+    width: 60px;
+    height: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 50;
+}
+
+.player-name-label {
+    position: absolute;
+
+    bottom: 100%;
+
+    margin-bottom: 3px;
+
+    padding: 4px 8px;
+
+    max-width: 120px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    background: rgba(9, 20, 34, 0.88);
+
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.player-sprite {
+    font-size: 48px;
+
+    filter:
+        drop-shadow(0 6px 0 rgba(0, 0, 0, 0.22));
+
+    transform-origin: center bottom;
+}
+
+#player.walking .player-sprite {
+    animation: playerWalk 0.3s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   24. INTERACTION PROMPT
+========================================================= */
+
+.interaction-prompt {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    z-index: 130;
+
+    min-width: 260px;
+
+    padding: 11px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background: rgba(12, 27, 46, 0.96);
+
+    border: 3px solid #ffe157;
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 0 rgba(0, 0, 0, 0.35);
+
+    animation: interactionEnter 0.25s ease-out;
+}
+
+.interaction-icon {
+    color: #ffe157;
+
+    animation: starFloat 1.5s ease-in-out infinite;
+}
+
+.interaction-prompt strong {
+    color: #ffe157;
+
+    font-size: 12px;
+}
+
+.interaction-prompt span {
+    font-size: 11px;
+
+    color: #ffffff;
+}
+
+.interaction-button {
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    background: #ffd83d;
+
+    color: #382600;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   25. MOBILE D-PAD
+========================================================= */
+
+.mobile-controls {
+    position: fixed;
+
+    left: 22px;
+    bottom: 22px;
+
+    width: 155px;
+    height: 155px;
+
+    z-index: 120;
+
+    display: none;
+}
+
+.dpad-button {
+    position: absolute;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(16, 31, 51, 0.9);
+
+    color: #ffffff;
+
+    border: 3px solid rgba(255, 255, 255, 0.85);
+
+    border-radius: 12px;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 5px 0 rgba(0, 0, 0, 0.35);
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dpad-button:active,
+.dpad-button.pressed {
+    transform: translateY(4px);
+
+    background: #376788;
+
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.dpad-up {
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.dpad-down {
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.dpad-left {
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.dpad-right {
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.dpad-up:active,
+.dpad-up.pressed,
+.dpad-down:active,
+.dpad-down.pressed {
+    transform:
+        translateX(-50%)
+        translateY(4px);
+}
+
+.dpad-left:active,
+.dpad-left.pressed,
+.dpad-right:active,
+.dpad-right.pressed {
+    transform:
+        translateY(calc(-50% + 4px));
+}
+
+
+/* =========================================================
+   26. MISSION OVERLAY
+========================================================= */
+
+.mission-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(5, 12, 22, 0.78);
+
+    backdrop-filter: blur(5px);
+}
+
+.mission-panel {
+    position: relative;
+
+    width: min(680px, 94vw);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1e3858,
+            #142842
+        );
+
+    border: 4px solid #ffffff;
+    border-radius: 20px;
+
+    box-shadow:
+        0 9px 0 #08111e,
+        0 22px 60px rgba(0, 0, 0, 0.5);
+
+    animation: missionEnter 0.35s ease-out;
+}
+
+.close-mission {
+    position: absolute;
+
+    right: 13px;
+    top: 13px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 9px;
+
+    background: #e95454;
+
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 0 #8f2929;
+}
+
+.close-mission:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #8f2929;
+}
+
+.mission-header {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding-right: 45px;
+
+    margin-bottom: 20px;
+}
+
+.mission-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #31577b;
+
+    border: 3px solid #8cddff;
+    border-radius: 13px;
+
+    font-size: 30px;
+}
+
+.mission-small-title {
+    color: #91b4d4;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+#mission-title {
+    margin-top: 2px;
+
+    color: #ffffff;
+
+    font-size: clamp(20px, 4vw, 29px);
+}
+
+#mission-content {
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   27. GENERIC MISSION BUTTONS
+========================================================= */
+
+.mission-action-button {
+    min-height: 48px;
+
+    padding: 10px 18px;
+
+    margin: 6px;
+
+    border-radius: 11px;
+
+    background: #38a7df;
+
+    border: 3px solid #a7e7ff;
+
+    color: #ffffff;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 5px 0 #17658d;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+.mission-action-button:hover {
+    transform: translateY(-2px);
+}
+
+.mission-action-button:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #17658d;
+}
+
+
+/* =========================================================
+   28. FEEDBACK OVERLAY
+========================================================= */
+
+.feedback-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 700;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        rgba(5, 12, 22, 0.76);
+
+    backdrop-filter: blur(4px);
+}
+
+.feedback-card {
+    width: min(390px, 88vw);
+
+    padding: 28px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #203d5e,
+            #132840
+        );
+
+    border: 4px solid #ffffff;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 0 #07101d,
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+    animation: feedbackPop 0.35s ease-out;
+}
+
+.feedback-icon {
+    font-size: 64px;
+
+    margin-bottom: 7px;
+
+    animation: feedbackStar 0.7s ease-out;
+}
+
+#feedback-title {
+    color: #ffe052;
+
+    font-size: 30px;
+}
+
+#feedback-message {
+    margin: 9px 0 12px;
+
+    color: #e8f6ff;
+
+    font-size: 15px;
+}
+
+.feedback-score {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 7px 15px;
+
+    background: #ffe052;
+
+    border-radius: 10px;
+
+    color: #493400;
+
+    font-size: 20px;
+    font-weight: 900;
+
+    animation: scoreFloat 1s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   29. MICROPHONE
+========================================================= */
+
+.microphone-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 800;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        rgba(5, 13, 23, 0.88);
+
+    backdrop-filter: blur(8px);
+}
+
+.microphone-card {
+    width: min(440px, 90vw);
+
+    text-align: center;
+
+    padding: 30px;
+
+    background: #152b46;
+
+    border: 4px solid #ffffff;
+    border-radius: 22px;
+
+    box-shadow:
+        0 9px 0 #07101d;
+}
+
+.microphone-circle {
+    width: 105px;
+    height: 105px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #ef5e5e,
+            #bc3333
+        );
+
+    border: 5px solid #ffaaaa;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 0 rgba(239, 94, 94, 0.5);
+
+    animation: micPulse 1.3s infinite;
+}
+
+.microphone-circle span {
+    font-size: 48px;
+}
+
+.microphone-card h2 {
+    font-size: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   30. VOICE WAVE
+========================================================= */
+
+.voice-wave {
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.voice-wave span {
+    display: block;
+
+    width: 7px;
+    height: 15px;
+
+    background: #63d4ff;
+
+    border-radius: 5px;
+
+    animation: voiceWave 0.7s ease-in-out infinite alternate;
+}
+
+.voice-wave span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.voice-wave span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.voice-wave span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.voice-wave span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.voice-wave span:nth-child(6) {
+    animation-delay: 0.1s;
+}
+
+.live-transcript {
+    min-height: 48px;
+
+    margin-top: 16px;
+
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   31. VICTORY SCREEN
+========================================================= */
+
+#victory-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #377eb0,
+            #142b4c 72%
+        );
+}
+
+.victory-panel {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(520px, 90vw);
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(29, 62, 95, 0.98),
+            rgba(14, 32, 54, 0.98)
+        );
+
+    border: 4px solid #ffffff;
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 0 #08111e,
+        0 25px 70px rgba(0, 0, 0, 0.5);
+
+    animation: victoryEnter 0.65s ease-out;
+}
+
+.victory-trophy {
+    font-size: 80px;
+
+    animation: trophyBounce 1.4s ease-in-out infinite;
+}
+
+.victory-panel h1 {
+    margin-top: 4px;
+
+    font-size: clamp(28px, 5vw, 44px);
+}
+
+.victory-panel h1 span {
+    display: block;
+
+    color: #ffe052;
+}
+
+.victory-stars {
+    margin: 12px 0 20px;
+
+    font-size: 28px;
+
+    letter-spacing: 3px;
+}
+
+.result-card {
+    padding: 7px 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 2px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 13px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 11px 2px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.result-row span {
+    color: #a9c5dc;
+}
+
+.result-row strong {
+    color: #ffffff;
+}
+
+.victory-message {
+    margin: 18px 0;
+
+    line-height: 1.5;
+
+    color: #e8f6ff;
+}
+
+
+/* =========================================================
+   32. CONFETTI
+========================================================= */
+
+#confetti-container {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+
+    width: 10px;
+    height: 16px;
+
+    top: -30px;
+
+    animation:
+        confettiFall 4s linear forwards;
+}
+
+
+/* =========================================================
+   33. ROTATE SCREEN
+========================================================= */
+
+.rotate-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background: #102038;
+}
+
+.rotate-card {
+    max-width: 340px;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background: #1c3859;
+
+    border: 4px solid #ffffff;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 0 #08111e;
+}
+
+.rotate-icon {
+    font-size: 65px;
+
+    margin-bottom: 12px;
+
+    animation: phoneRotate 2s ease-in-out infinite;
+}
+
+.rotate-card h2 {
+    color: #ffe052;
+
+    margin-bottom: 10px;
+}
+
+.rotate-card p {
+    line-height: 1.5;
+
+    color: #d7ecff;
+}
+
+
+/* =========================================================
+   34. DEVICE HELPERS
+========================================================= */
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: inline;
+}
+
+
+/* =========================================================
+   35. ANIMATIONS
+========================================================= */
+
+@keyframes panelEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes sunPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+}
+
+
+@keyframes cloudMoveOne {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 350px));
+    }
+
+}
+
+
+@keyframes cloudMoveTwo {
+
+    from {
+        transform:
+            translateX(0)
+            scale(0.7);
+    }
+
+    to {
+        transform:
+            translateX(calc(100vw + 500px))
+            scale(0.7);
+    }
+
+}
+
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+@keyframes npcIdle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+@keyframes checkpointGlow {
+
+    0%,
+    100% {
+        opacity: 0.55;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.18);
+    }
+
+}
+
+
+@keyframes playerWalk {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    to {
+        transform:
+            translateY(-5px)
+            rotate(2deg);
+    }
+
+}
+
+
+@keyframes interactionEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translate(-50%, 15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+    }
+
+}
+
+
+@keyframes missionEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.88)
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+@keyframes feedbackPop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes feedbackStar {
+
+    0% {
+        transform:
+            scale(0)
+            rotate(-90deg);
+    }
+
+    70% {
+        transform:
+            scale(1.2)
+            rotate(10deg);
+    }
+
+    100% {
+        transform:
+            scale(1)
+            rotate(0);
+    }
+
+}
+
+
+@keyframes scoreFloat {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-4px);
+    }
+
+}
+
+
+@keyframes micPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(239, 94, 94, 0.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 22px rgba(239, 94, 94, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(239, 94, 94, 0);
+    }
+
+}
+
+
+@keyframes voiceWave {
+
+    from {
+        height: 12px;
+    }
+
+    to {
+        height: 48px;
+    }
+
+}
+
+
+@keyframes victoryEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes trophyBounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(3deg);
+    }
+
+}
+
+
+@keyframes confettiFall {
+
+    from {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0.8;
+    }
+
+}
+
+
+@keyframes phoneRotate {
+
+    0%,
+    35% {
+        transform: rotate(0deg);
+    }
+
+    65%,
+    100% {
+        transform: rotate(90deg);
+    }
+
+}
+
+
+/* =========================================================
+   36. TABLET / TOUCH
+========================================================= */
+
+@media (hover: none), (pointer: coarse) {
+
+    .mobile-controls {
+        display: block;
+    }
+
+    .mobile-only {
+        display: inline-flex;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .interaction-prompt {
+        left: auto;
+        right: 20px;
+        bottom: 28px;
+
+        transform: none;
+
+        min-width: 180px;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+}
+
+
+/* =========================================================
+   37. SMALL LANDSCAPE SCREENS
+========================================================= */
+
+@media (max-height: 650px) {
+
+    .start-panel {
+        padding: 16px 25px 20px;
+
+        width: min(500px, 88vw);
+    }
+
+    .logo-star {
+        display: none;
+    }
+
+    .game-title {
+        font-size: 32px;
+    }
+
+    .tagline {
+        margin-top: 7px;
+    }
+
+    .name-section {
+        margin-top: 10px;
+    }
+
+    #player-name {
+        padding: 9px 12px;
+    }
+
+    .avatar-section {
+        margin-top: 10px;
+    }
+
+    .avatar-option {
+        width: 49px;
+        height: 49px;
+    }
+
+    .avatar-preview {
+        font-size: 28px;
+    }
+
+    .start-panel > .primary-button {
+        margin-top: 13px;
+
+        min-height: 43px;
+    }
+
+    #game-hud {
+        min-height: 52px;
+
+        top: 7px;
+
+        padding: 5px 10px;
+    }
+
+    .hud-avatar {
+        width: 36px;
+        height: 36px;
+
+        font-size: 22px;
+    }
+
+    .checkpoint-stars {
+        font-size: 15px;
+    }
+
+    .mobile-controls {
+        width: 130px;
+        height: 130px;
+
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .dpad-button {
+        width: 46px;
+        height: 46px;
+    }
+
+    .mission-panel {
+        max-height: 94vh;
+
+        padding: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   38. PHONE PORTRAIT
+========================================================= */
+
+@media
+    (max-width: 900px)
+    and (orientation: portrait) {
+
+    #game-screen:not(.hidden) ~ .rotate-screen {
+        display: flex;
+    }
+
+}
+
+
+/* =========================================================
+   39. VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .start-panel {
+        width: 92vw;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .game-title {
+        font-size: 34px;
+    }
+
+    .hud-player-info {
+        display: none;
+    }
+
+    .checkpoint-stars {
+        display: none;
+    }
+
+}
