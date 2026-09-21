@@ -1,0 +1,104 @@
+/* =========================================================
+   KEMBARA PETARA — DENSE RPG MAP
+   Visual scenery only. Does not change mission logic.
+========================================================= */
+
+.dense-decor {
+    position: absolute;
+    z-index: 6;
+    pointer-events: none;
+    user-select: none;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 5px 2px rgba(25, 55, 25, .20));
+}
+.dense-tree { width: 150px; height: auto; }
+.dense-bush { width: 105px; height: auto; }
+.dense-flower { width: 72px; height: auto; }
+.dense-rock { width: 78px; height: auto; }
+.dense-small { width: 62px; height: auto; }
+.dense-log { width: 105px; height: auto; }
+.dense-fence { width: 150px; height: 85px; object-fit: cover; }
+.dense-crate { width: 70px; height: auto; }
+
+/* Forest frame — keeps the central roads visually open */
+.dt01{left:35px;top:35px}.dt02{left:170px;top:65px}.dt03{left:330px;top:20px}
+.dt04{left:55px;top:560px}.dt05{left:210px;top:590px}.dt06{left:390px;top:535px}
+.dt07{left:35px;top:1210px}.dt08{left:190px;top:1360px}.dt09{left:430px;top:1290px}
+.dt10{left:1990px;top:30px}.dt11{left:1830px;top:80px}.dt12{left:1655px;top:25px}
+.dt13{left:2010px;top:555px}.dt14{left:1845px;top:585px}.dt15{left:1665px;top:535px}
+.dt16{left:1995px;top:1215px}.dt17{left:1830px;top:1360px}.dt18{left:1625px;top:1290px}
+
+/* Flower/brush clusters around buildings and paths */
+.db01{left:620px;top:675px}.db02{left:710px;top:610px}.db03{left:1470px;top:675px}
+.db04{left:1390px;top:610px}.db05{left:650px;top:1010px}.db06{left:1460px;top:1015px}
+.df01{left:555px;top:735px}.df02{left:690px;top:870px}.df03{left:1510px;top:735px}
+.df04{left:1430px;top:875px}.df05{left:850px;top:300px}.df06{left:1290px;top:305px}
+
+/* Rocks and woodland details */
+.dr01{left:520px;top:970px}.dr02{left:1580px;top:980px}.dr03{left:690px;top:270px}.dr04{left:1430px;top:275px}
+.ds01{left:505px;top:1180px}.ds02{left:1610px;top:1185px}
+.dl01{left:275px;top:1100px}.dl02{left:1815px;top:1110px}
+
+/* Small garden/fence areas beside Dapur and Kedai */
+.fence01{left:250px;top:900px}.fence02{left:405px;top:900px}
+.fence03{left:1650px;top:900px}.fence04{left:1805px;top:900px}
+.crate01{left:545px;top:820px}.crate02{left:1585px;top:820px}
+
+/* Decorative pond similar to the reference map */
+.petara-pond {
+    position:absolute;
+    left:180px;
+    top:1010px;
+    width:330px;
+    height:260px;
+    z-index:2;
+    border:12px solid #5aa24e;
+    border-radius:42% 35% 46% 32%;
+    background:
+        radial-gradient(ellipse at 25% 35%, rgba(255,255,255,.30) 0 3%, transparent 4%),
+        radial-gradient(ellipse at 70% 68%, rgba(255,255,255,.20) 0 4%, transparent 5%),
+        linear-gradient(#36bfe8,#1d9fd4);
+    box-shadow:
+        inset 0 0 0 8px rgba(255,255,255,.10),
+        0 5px 0 rgba(36,100,48,.20);
+}
+
+/* Denser green edge near the river */
+.petara-river {
+    box-shadow:
+        inset 0 14px 0 rgba(255,255,255,.13),
+        inset 0 -14px 0 rgba(0,90,145,.15),
+        0 -16px 0 #75cf63,
+        0 16px 0 #75cf63 !important;
+}
+
+/* Buildings feel embedded in gardens instead of floating */
+#checkpoint-2::after,
+#checkpoint-4::after {
+    content:"";
+    position:absolute;
+    left:15px;
+    right:15px;
+    bottom:22px;
+    height:36px;
+    z-index:-1;
+    border-radius:50%;
+    background:rgba(49,125,49,.22);
+}
+
+/* Keep scenery behind gameplay objects */
+#checkpoint-1,#checkpoint-2,#checkpoint-3,#checkpoint-4,#checkpoint-5,
+#guide-npc,#player,#control-sign {
+    z-index:30;
+}
+#player { z-index:50; }
+
+/* Extra small flower dots to remove the empty-field feeling */
+#game-world {
+    background-image:
+        radial-gradient(circle at 18px 22px, rgba(255,255,255,.10) 0 2px, transparent 3px),
+        radial-gradient(circle at 67px 58px, rgba(35,115,48,.13) 0 3px, transparent 4px),
+        radial-gradient(circle at 42px 83px, rgba(255,220,90,.16) 0 2px, transparent 3px) !important;
+    background-size:90px 90px,120px 120px,145px 145px !important;
+}
