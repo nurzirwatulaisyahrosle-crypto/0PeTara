@@ -3772,3 +3772,320 @@ button {
    END PETARA RPG MAP REDESIGN
 ========================================================= */   
 }
+/* =========================================================
+   KEMBARA PETARA — MAP POLISH 2
+   ========================================================= */
+
+/* Sungai lebih natural dan tidak terlalu besar */
+.petara-river {
+    top: 390px !important;
+    height: 190px !important;
+    border-top: 14px solid #75d76b !important;
+    border-bottom: 14px solid #75d76b !important;
+}
+
+/* Jambatan tepat di tengah sungai */
+#checkpoint-3 {
+    left: 950px !important;
+    top: 355px !important;
+    width: 300px !important;
+    z-index: 30 !important;
+}
+
+#checkpoint-3 .bridge-image {
+    width: 280px !important;
+    height: 240px !important;
+}
+
+/* Dapur di kiri persimpangan */
+#checkpoint-2 {
+    left: 310px !important;
+    top: 650px !important;
+    width: 300px !important;
+}
+
+#checkpoint-2 .building-image {
+    width: 285px !important;
+    height: 220px !important;
+}
+
+/* Kedai di kanan persimpangan */
+#checkpoint-4 {
+    left: 1580px !important;
+    top: 650px !important;
+    width: 300px !important;
+}
+
+#checkpoint-4 .building-image {
+    width: 285px !important;
+    height: 220px !important;
+}
+
+/* Gerbang di bahagian paling atas */
+#checkpoint-5 {
+    left: 955px !important;
+    top: 45px !important;
+    width: 290px !important;
+}
+
+#checkpoint-5 .gate-image {
+    width: 285px !important;
+    height: 225px !important;
+}
+
+/* CP1 bawah tengah */
+#checkpoint-1 {
+    left: 1030px !important;
+    top: 1100px !important;
+}
+
+/* Penjaga berhampiran kawasan mula */
+#guide-npc {
+    left: 1300px !important;
+    top: 1260px !important;
+}
+
+/* Papan PeTara */
+#control-sign {
+    left: 760px !important;
+    top: 1300px !important;
+    width: 150px !important;
+}
+
+/* Lampu di kiri/kanan laluan CP1 */
+.lamp-a {
+    left: 900px !important;
+    top: 1040px !important;
+}
+
+.lamp-b {
+    left: 1240px !important;
+    top: 1040px !important;
+}
+
+/* =========================================================
+   HUTAN — KIRI MAP
+   ========================================================= */
+
+.tree-a {
+    left: 40px !important;
+    top: 80px !important;
+    width: 175px !important;
+}
+
+.tree-b {
+    left: 190px !important;
+    top: 170px !important;
+    width: 150px !important;
+}
+
+.tree-c {
+    left: 420px !important;
+    top: 60px !important;
+    width: 165px !important;
+}
+
+.tree-f {
+    left: 50px !important;
+    top: 980px !important;
+    width: 175px !important;
+}
+
+.tree-g {
+    left: 270px !important;
+    top: 1200px !important;
+    width: 165px !important;
+}
+
+/* =========================================================
+   HUTAN — KANAN MAP
+   ========================================================= */
+
+.tree-d {
+    left: 1820px !important;
+    top: 80px !important;
+    width: 170px !important;
+}
+
+.tree-e {
+    left: 1990px !important;
+    top: 230px !important;
+    width: 165px !important;
+}
+
+.tree-h {
+    left: 1830px !important;
+    top: 970px !important;
+    width: 175px !important;
+}
+
+.tree-i {
+    left: 2000px !important;
+    top: 1200px !important;
+    width: 160px !important;
+}
+
+.tree-j {
+    left: 1650px !important;
+    top: 1250px !important;
+    width: 155px !important;
+}
+
+/* Pokok lebih besar supaya dunia terasa padat */
+.map-decoration.tree {
+    height: auto !important;
+}
+
+/* =========================================================
+   BATU
+   ========================================================= */
+
+.rock-a {
+    left: 600px !important;
+    top: 1030px !important;
+}
+
+.rock-b {
+    left: 1510px !important;
+    top: 1080px !important;
+}
+
+.rock-c {
+    left: 520px !important;
+    top: 270px !important;
+}
+
+.map-decoration.rock {
+    width: 85px !important;
+    height: auto !important;
+}
+
+/* =========================================================
+   SEMAK & BUNGA
+   ========================================================= */
+
+.bush-a {
+    left: 580px !important;
+    top: 1230px !important;
+}
+
+.bush-b {
+    left: 1510px !important;
+    top: 1210px !important;
+}
+
+.flowers-a {
+    left: 300px !important;
+    top: 1010px !important;
+}
+
+.flowers-b {
+    left: 1770px !important;
+    top: 1010px !important;
+}
+
+.flowers-c {
+    left: 1420px !important;
+    top: 260px !important;
+}
+
+/* =========================================================
+   KAYU & TUNGGUL
+   ========================================================= */
+
+.stump-decoration {
+    left: 360px !important;
+    top: 1150px !important;
+    width: 75px !important;
+}
+
+.log-decoration {
+    left: 1730px !important;
+    top: 1320px !important;
+    width: 125px !important;
+}
+
+/* =========================================================
+   BUAT JALAN LEBIH KEMAS
+   ========================================================= */
+
+#game-world::before {
+    left: 990px !important;
+    width: 220px !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            #bd8145 0%,
+            #d99d57 7%,
+            #e6b66f 20%,
+            #edc681 50%,
+            #e6b66f 80%,
+            #d99d57 93%,
+            #bd8145 100%
+        ) !important;
+}
+
+#game-world::after {
+    left: 260px !important;
+    top: 720px !important;
+
+    width: 1680px !important;
+    height: 170px !important;
+
+    background:
+        linear-gradient(
+            #bd8145 0%,
+            #d99d57 8%,
+            #e7b970 22%,
+            #edc681 50%,
+            #e7b970 78%,
+            #d99d57 92%,
+            #bd8145 100%
+        ) !important;
+}
+
+/* =========================================================
+   OBJECT SHADOW / PIXEL FEEL
+   ========================================================= */
+
+.checkpoint-image,
+.map-decoration,
+.npc-pixel-sprite,
+#control-sign {
+    image-rendering: pixelated;
+
+    filter:
+        drop-shadow(0 6px 2px rgba(35, 58, 25, 0.24));
+}
+
+/* Bangunan lebih menonjol */
+#checkpoint-2 .checkpoint-image,
+#checkpoint-4 .checkpoint-image,
+#checkpoint-5 .checkpoint-image {
+    filter:
+        drop-shadow(0 9px 3px rgba(25, 43, 18, 0.28));
+}
+
+/* Jangan bagi label terlalu jauh dari objek */
+.checkpoint-label {
+    margin-top: 0 !important;
+}
+
+/* CP1 kekal bercahaya */
+#checkpoint-1 .checkpoint-glow {
+    width: 190px !important;
+    height: 190px !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 232, 75, 0.58),
+            rgba(255, 214, 47, 0.18) 48%,
+            transparent 72%
+        ) !important;
+}
+
+/* =========================================================
+   END MAP POLISH 2
+   ========================================================= */
