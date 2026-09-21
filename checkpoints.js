@@ -881,9 +881,7 @@ function renderCP2() {
                         object => `
                             <div
                                 class="kitchen-object"
-                                data-object="
-                                    ${object.id}
-                                "
+                              data-object="${object.id}"
                                 style="
                                     min-height:100px;
                                     display:flex;
