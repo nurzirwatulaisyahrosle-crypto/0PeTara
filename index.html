@@ -241,207 +241,129 @@
 
         <div id="game-world">
 
+            <!-- HIASAN ALAM PETARA -->
+            <img src="assets/tree-01.png" class="map-decoration tree tree-a" alt="">
+            <img src="assets/tree-02.png" class="map-decoration tree tree-b" alt="">
+            <img src="assets/tree-03.png" class="map-decoration tree tree-c" alt="">
+            <img src="assets/tree-01.png" class="map-decoration tree tree-d" alt="">
+            <img src="assets/tree-02.png" class="map-decoration tree tree-e" alt="">
+            <img src="assets/tree-04.png" class="map-decoration tree tree-f" alt="">
+            <img src="assets/tree-03.png" class="map-decoration tree tree-g" alt="">
+            <img src="assets/tree-01.png" class="map-decoration tree tree-h" alt="">
+            <img src="assets/tree-02.png" class="map-decoration tree tree-i" alt="">
+            <img src="assets/tree-04.png" class="map-decoration tree tree-j" alt="">
 
-            <!-- START AREA -->
+            <img src="assets/rock.png" class="map-decoration rock rock-a" alt="">
+            <img src="assets/rock.png" class="map-decoration rock rock-b" alt="">
+            <img src="assets/rock.png" class="map-decoration rock rock-c" alt="">
 
-            <div
-                class="world-zone start-zone"
-                data-zone="start"
-            >
+            <img src="assets/bush.png" class="map-decoration bush bush-a" alt="">
+            <img src="assets/bush-flowers.png" class="map-decoration bush bush-b" alt="">
+            <img src="assets/flowers-01.png" class="map-decoration flowers flowers-a" alt="">
+            <img src="assets/flowers-02.png" class="map-decoration flowers flowers-b" alt="">
+            <img src="assets/flowers-03.png" class="map-decoration flowers flowers-c" alt="">
+            <img src="assets/log.png" class="map-decoration log-decoration" alt="">
+            <img src="assets/stump.png" class="map-decoration stump-decoration" alt="">
 
-                <div class="zone-label">
-                    Permulaan PeTara
-                </div>
+            <!-- SUNGAI PETARA -->
+            <div class="petara-river"></div>
 
+            <!-- KAWASAN PERMULAAN -->
+            <div class="world-zone start-zone" data-zone="start">
+                <div class="zone-label">PERMULAAN PETARA</div>
             </div>
 
-
-
-            <!-- CONTROL SIGN -->
-
-            <div
+            <!-- PAPAN ARAH -->
+            <img
+                src="assets/direction-sign.png"
                 id="control-sign"
-                class="world-object control-sign"
+                class="world-object petara-direction-sign"
+                alt="Papan arah PeTara"
             >
-
-                <div class="sign-title">
-                    CARA BERGERAK
-                </div>
-
-                <div class="sign-controls">
-
-                    <span>W / ↑</span>
-                    <span>A / ←</span>
-                    <span>S / ↓</span>
-                    <span>D / →</span>
-
-                </div>
-
-            </div>
-
-
 
             <!-- PENJAGA PETARA -->
-
-            <div
-                id="guide-npc"
-                class="npc"
-            >
-
-                <div class="npc-name">
-                    Penjaga PeTara
-                </div>
-
-                <div class="npc-character">
-                    🧙
-                </div>
-
+            <div id="guide-npc" class="npc">
+                <div class="npc-name">Penjaga PeTara</div>
+                <img
+                    src="assets/penjaga-petara.png"
+                    class="npc-pixel-sprite"
+                    alt="Penjaga PeTara"
+                >
             </div>
-
-
 
             <!-- CHECKPOINT 1 -->
-
-            <div
-                id="checkpoint-1"
-                class="checkpoint unlocked"
-                data-checkpoint="1"
-            >
-
+            <div id="checkpoint-1" class="checkpoint unlocked" data-checkpoint="1">
                 <div class="checkpoint-glow"></div>
-
-                <div class="checkpoint-flag">
-                    🚩
-                </div>
-
-                <div class="checkpoint-label">
-                    MISI 1
-                </div>
-
+                <img
+                    src="assets/checkpoint.png"
+                    class="checkpoint-image checkpoint-flag-image"
+                    alt="Checkpoint 1"
+                >
+                <div class="checkpoint-label">MISI 1</div>
             </div>
-
-
 
             <!-- CHECKPOINT 2 -->
-
-            <div
-                id="checkpoint-2"
-                class="checkpoint locked"
-                data-checkpoint="2"
-            >
-
-                <div class="checkpoint-lock">
-                    🔒
-                </div>
-
-                <div class="checkpoint-building">
-                    🏠
-                </div>
-
-                <div class="checkpoint-label">
-                    DAPUR PETARA
-                </div>
-
+            <div id="checkpoint-2" class="checkpoint locked" data-checkpoint="2">
+                <div class="checkpoint-lock">🔒</div>
+                <img
+                    src="assets/dapur-petara.png"
+                    class="checkpoint-image building-image"
+                    alt="Dapur PeTara"
+                >
+                <div class="checkpoint-label">DAPUR PETARA</div>
             </div>
-
-
 
             <!-- CHECKPOINT 3 -->
-
-            <div
-                id="checkpoint-3"
-                class="checkpoint locked"
-                data-checkpoint="3"
-            >
-
-                <div class="checkpoint-lock">
-                    🔒
-                </div>
-
-                <div class="checkpoint-building">
-                    🌉
-                </div>
-
-                <div class="checkpoint-label">
-                    JAMBATAN PETARA
-                </div>
-
+            <div id="checkpoint-3" class="checkpoint locked" data-checkpoint="3">
+                <div class="checkpoint-lock">🔒</div>
+                <img
+                    src="assets/bridge.png"
+                    class="checkpoint-image bridge-image"
+                    alt="Jambatan PeTara"
+                >
+                <div class="checkpoint-label">JAMBATAN PETARA</div>
             </div>
-
-
 
             <!-- CHECKPOINT 4 -->
-
-            <div
-                id="checkpoint-4"
-                class="checkpoint locked"
-                data-checkpoint="4"
-            >
-
-                <div class="checkpoint-lock">
-                    🔒
-                </div>
-
-                <div class="checkpoint-building">
-                    🏪
-                </div>
-
-                <div class="checkpoint-label">
-                    KEDAI PAK ALI
-                </div>
-
+            <div id="checkpoint-4" class="checkpoint locked" data-checkpoint="4">
+                <div class="checkpoint-lock">🔒</div>
+                <img
+                    src="assets/kedai-pak-ali.png"
+                    class="checkpoint-image building-image"
+                    alt="Kedai Pak Ali"
+                >
+                <div class="checkpoint-label">KEDAI PAK ALI</div>
             </div>
 
-
-
             <!-- CHECKPOINT 5 -->
-
             <div
                 id="checkpoint-5"
                 class="checkpoint locked final-checkpoint"
                 data-checkpoint="5"
             >
-
-                <div class="checkpoint-lock">
-                    🔒
-                </div>
-
-                <div class="petara-gate">
-
-                    <div class="gate-star">
-                        ✦
-                    </div>
-
-                    <div class="gate-title">
-                        GERBANG PETARA
-                    </div>
-
-                </div>
-
+                <div class="checkpoint-lock">🔒</div>
+                <img
+                    src="assets/gate-petara.png"
+                    class="checkpoint-image gate-image"
+                    alt="Gerbang PeTara"
+                >
+                <div class="checkpoint-label">GERBANG PETARA</div>
             </div>
 
-
+            <!-- LAMPU HIASAN -->
+            <img src="assets/lamp.png" class="map-decoration lamp lamp-a" alt="">
+            <img src="assets/lamp.png" class="map-decoration lamp lamp-b" alt="">
 
             <!-- PLAYER -->
-
             <div id="player">
-
-                <div
-                    id="player-name-label"
-                    class="player-name-label"
-                >
-                    Pemain
-                </div>
-
-                <div
+                <div id="player-name-label" class="player-name-label">Pemain</div>
+                <img
                     id="player-sprite"
-                    class="player-sprite"
+                    class="player-sprite pixel-player"
+                    src="assets/player-boy-front.png"
+                    alt="Pengembara"
                 >
-                    🧑
-                </div>
-
             </div>
-
 
         </div>
 
@@ -804,10 +726,6 @@
 <script src="audio.js"></script>
 <script src="checkpoints.js"></script>
 <script src="game.js"></script>
-
-
-</body>
-</html>
 
 
 </body>
